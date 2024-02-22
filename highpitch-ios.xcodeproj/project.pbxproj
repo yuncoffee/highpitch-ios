@@ -22,6 +22,9 @@
 		20970E022B85D21900690459 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E012B85D21900690459 /* ProjectsViewController.swift */; };
 		20970E042B85D24100690459 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E032B85D24100690459 /* SignInViewController.swift */; };
 		20970E062B85D24800690459 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E052B85D24800690459 /* SignUpViewController.swift */; };
+		20970E0E2B871E1100690459 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E0D2B871E1100690459 /* ProjectModel.swift */; };
+		20970E102B871E2100690459 /* PracticeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E0F2B871E2100690459 /* PracticeModel.swift */; };
+		20970E122B871E3400690459 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E112B871E3400690459 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		20970E012B85D21900690459 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		20970E032B85D24100690459 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		20970E052B85D24800690459 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		20970E0D2B871E1100690459 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
+		20970E0F2B871E2100690459 /* PracticeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeModel.swift; sourceTree = "<group>"; };
+		20970E112B871E3400690459 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +117,10 @@
 		20970D592B84D62700690459 /* highpitch-ios */ = {
 			isa = PBXGroup;
 			children = (
-				20970DEC2B85CB9600690459 /* Views */,
 				20970DEA2B85CB1500690459 /* App */,
+				20970E092B85E27300690459 /* Extension */,
+				20970E0C2B871DE800690459 /* Models */,
+				20970DEC2B85CB9600690459 /* Views */,
 				20970D5E2B84D62700690459 /* ViewController.swift */,
 			);
 			path = "highpitch-ios";
@@ -207,6 +215,23 @@
 				20970E052B85D24800690459 /* SignUpViewController.swift */,
 			);
 			path = Sign;
+			sourceTree = "<group>";
+		};
+		20970E092B85E27300690459 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		20970E0C2B871DE800690459 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				20970E0D2B871E1100690459 /* ProjectModel.swift */,
+				20970E0F2B871E2100690459 /* PracticeModel.swift */,
+				20970E112B871E3400690459 /* UserModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,11 +369,14 @@
 				20970D5B2B84D62700690459 /* AppDelegate.swift in Sources */,
 				20970E022B85D21900690459 /* ProjectsViewController.swift in Sources */,
 				20970E062B85D24800690459 /* SignUpViewController.swift in Sources */,
+				20970E122B871E3400690459 /* UserModel.swift in Sources */,
 				20970DFE2B85D1F400690459 /* RecordingViewController.swift in Sources */,
 				20970E042B85D24100690459 /* SignInViewController.swift in Sources */,
 				20970D5D2B84D62700690459 /* SceneDelegate.swift in Sources */,
 				20970DF02B85CC2500690459 /* OnboardingViewController.swift in Sources */,
 				20970E002B85D20A00690459 /* SettingsViewController.swift in Sources */,
+				20970E102B871E2100690459 /* PracticeModel.swift in Sources */,
+				20970E0E2B871E1100690459 /* ProjectModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
