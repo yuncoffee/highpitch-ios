@@ -11,11 +11,10 @@ class SignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("Sign Up")
         // Do any additional setup after loading the view.
     }
     
-
     /*
     // MARK: - Navigation
 

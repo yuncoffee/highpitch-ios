@@ -11,11 +11,10 @@ class OnboardingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("Onboarding")
         // Do any additional setup after loading the view.
     }
     
-
     /*
     // MARK: - Navigation
 

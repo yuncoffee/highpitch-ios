@@ -14,10 +14,6 @@ class MainTabBarViewController: UITabBarController {
         // Do any additional setup after loading the view.
         setup()
     }
-    
-    override func loadView() {
-        super.loadView()
-    }
     /*
     // MARK: - Navigation
 
@@ -46,4 +42,3 @@ class MainTabBarViewController: UITabBarController {
         tabBar.backgroundColor = .white
     }
 }
-

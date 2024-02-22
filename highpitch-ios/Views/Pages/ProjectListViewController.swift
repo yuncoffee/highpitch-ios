@@ -11,11 +11,10 @@ class ProjectListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("set Projects")
         // Do any additional setup after loading the view.
     }
     
-
     /*
     // MARK: - Navigation
 

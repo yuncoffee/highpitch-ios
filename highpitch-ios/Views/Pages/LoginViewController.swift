@@ -11,11 +11,10 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("ss")
         // Do any additional setup after loading the view.
     }
     
-
     /*
     // MARK: - Navigation
 

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 enum SignType {
-    case 자체로그인
+    case custom
     case apple
     case google
 }

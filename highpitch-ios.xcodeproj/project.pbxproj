@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		20970D5B2B84D62700690459 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970D5A2B84D62700690459 /* AppDelegate.swift */; };
 		20970D5D2B84D62700690459 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970D5C2B84D62700690459 /* SceneDelegate.swift */; };
-		20970D5F2B84D62700690459 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970D5E2B84D62700690459 /* ViewController.swift */; };
 		20970D642B84D62800690459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20970D632B84D62800690459 /* Assets.xcassets */; };
 		20970D672B84D62800690459 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20970D652B84D62800690459 /* LaunchScreen.storyboard */; };
 		20970D722B84D62800690459 /* highpitch_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970D712B84D62800690459 /* highpitch_iosTests.swift */; };
@@ -25,6 +24,7 @@
 		20970E0E2B871E1100690459 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E0D2B871E1100690459 /* ProjectModel.swift */; };
 		20970E102B871E2100690459 /* PracticeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E0F2B871E2100690459 /* PracticeModel.swift */; };
 		20970E122B871E3400690459 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E112B871E3400690459 /* UserModel.swift */; };
+		20970E142B871FFF00690459 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 20970E132B871FFF00690459 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,6 @@
 		20970D572B84D62700690459 /* highpitch-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "highpitch-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20970D5A2B84D62700690459 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20970D5C2B84D62700690459 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		20970D5E2B84D62700690459 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		20970D632B84D62800690459 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20970D662B84D62800690459 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20970D682B84D62800690459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		20970E0D2B871E1100690459 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
 		20970E0F2B871E2100690459 /* PracticeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeModel.swift; sourceTree = "<group>"; };
 		20970E112B871E3400690459 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		20970E132B871FFF00690459 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +97,7 @@
 		20970D4E2B84D62700690459 = {
 			isa = PBXGroup;
 			children = (
+				20970E132B871FFF00690459 /* .swiftlint.yml */,
 				20970D592B84D62700690459 /* highpitch-ios */,
 				20970D702B84D62800690459 /* highpitch-iosTests */,
 				20970D7A2B84D62800690459 /* highpitch-iosUITests */,
@@ -121,7 +122,6 @@
 				20970E092B85E27300690459 /* Extension */,
 				20970E0C2B871DE800690459 /* Models */,
 				20970DEC2B85CB9600690459 /* Views */,
-				20970D5E2B84D62700690459 /* ViewController.swift */,
 			);
 			path = "highpitch-ios";
 			sourceTree = "<group>";
@@ -241,6 +241,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20970D812B84D62800690459 /* Build configuration list for PBXNativeTarget "highpitch-ios" */;
 			buildPhases = (
+				20970E152B87201300690459 /* Swift Lint */,
 				20970D532B84D62700690459 /* Sources */,
 				20970D542B84D62700690459 /* Frameworks */,
 				20970D552B84D62700690459 /* Resources */,
@@ -338,6 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20970E142B871FFF00690459 /* .swiftlint.yml in Resources */,
 				20970D672B84D62800690459 /* LaunchScreen.storyboard in Resources */,
 				20970D642B84D62800690459 /* Assets.xcassets in Resources */,
 			);
@@ -359,12 +361,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		20970E152B87201300690459 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		20970D532B84D62700690459 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20970D5F2B84D62700690459 /* ViewController.swift in Sources */,
 				20970DFB2B85D19B00690459 /* MainTabBarViewController.swift in Sources */,
 				20970D5B2B84D62700690459 /* AppDelegate.swift in Sources */,
 				20970E022B85D21900690459 /* ProjectsViewController.swift in Sources */,
@@ -461,7 +484,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -524,7 +547,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
