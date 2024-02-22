@@ -26,6 +26,10 @@
 		20970E122B871E3400690459 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E112B871E3400690459 /* UserModel.swift */; };
 		20970E142B871FFF00690459 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 20970E132B871FFF00690459 /* .swiftlint.yml */; };
 		20970E172B8724EB00690459 /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E162B8724EB00690459 /* LabelFactory.swift */; };
+		20970E1A2B8727FD00690459 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 20970E192B8727FD00690459 /* FlexLayout */; };
+		20970E1D2B87282300690459 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 20970E1C2B87282300690459 /* PinLayout */; };
+		20970E1F2B8729CB00690459 /* Preview+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E1E2B8729CB00690459 /* Preview+Extension.swift */; };
+		20970E222B8730BD00690459 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E212B8730BD00690459 /* ProjectsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,8 @@
 		20970E112B871E3400690459 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		20970E132B871FFF00690459 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		20970E162B8724EB00690459 /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
+		20970E1E2B8729CB00690459 /* Preview+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+Extension.swift"; sourceTree = "<group>"; };
+		20970E212B8730BD00690459 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20970E1D2B87282300690459 /* PinLayout in Frameworks */,
+				20970E1A2B8727FD00690459 /* FlexLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,10 +203,10 @@
 		20970DFC2B85D1C500690459 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				20970E202B8730AF00690459 /* Projects */,
 				20970DFA2B85D19B00690459 /* MainTabBarViewController.swift */,
 				20970DFD2B85D1F400690459 /* RecordingViewController.swift */,
 				20970DFF2B85D20A00690459 /* SettingsViewController.swift */,
-				20970E012B85D21900690459 /* ProjectsViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -223,6 +231,7 @@
 		20970E092B85E27300690459 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				20970E1E2B8729CB00690459 /* Preview+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -235,6 +244,15 @@
 				20970E112B871E3400690459 /* UserModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		20970E202B8730AF00690459 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				20970E012B85D21900690459 /* ProjectsViewController.swift */,
+				20970E212B8730BD00690459 /* ProjectsView.swift */,
+			);
+			path = Projects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +272,10 @@
 			dependencies = (
 			);
 			name = "highpitch-ios";
+			packageProductDependencies = (
+				20970E192B8727FD00690459 /* FlexLayout */,
+				20970E1C2B87282300690459 /* PinLayout */,
+			);
 			productName = "highpitch-ios";
 			productReference = 20970D572B84D62700690459 /* highpitch-ios.app */;
 			productType = "com.apple.product-type.application";
@@ -326,6 +348,10 @@
 				Base,
 			);
 			mainGroup = 20970D4E2B84D62700690459;
+			packageReferences = (
+				20970E182B8727FD00690459 /* XCRemoteSwiftPackageReference "FlexLayout" */,
+				20970E1B2B87282300690459 /* XCRemoteSwiftPackageReference "PinLayout" */,
+			);
 			productRefGroup = 20970D582B84D62700690459 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -391,8 +417,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20970E222B8730BD00690459 /* ProjectsView.swift in Sources */,
 				20970DFB2B85D19B00690459 /* MainTabBarViewController.swift in Sources */,
 				20970D5B2B84D62700690459 /* AppDelegate.swift in Sources */,
+				20970E1F2B8729CB00690459 /* Preview+Extension.swift in Sources */,
 				20970E022B85D21900690459 /* ProjectsViewController.swift in Sources */,
 				20970E062B85D24800690459 /* SignUpViewController.swift in Sources */,
 				20970E122B871E3400690459 /* UserModel.swift in Sources */,
@@ -503,7 +531,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -560,7 +588,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -746,6 +774,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		20970E182B8727FD00690459 /* XCRemoteSwiftPackageReference "FlexLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/layoutBox/FlexLayout.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.6;
+			};
+		};
+		20970E1B2B87282300690459 /* XCRemoteSwiftPackageReference "PinLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/layoutBox/PinLayout";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.10.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		20970E192B8727FD00690459 /* FlexLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 20970E182B8727FD00690459 /* XCRemoteSwiftPackageReference "FlexLayout" */;
+			productName = FlexLayout;
+		};
+		20970E1C2B87282300690459 /* PinLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 20970E1B2B87282300690459 /* XCRemoteSwiftPackageReference "PinLayout" */;
+			productName = PinLayout;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 20970D4F2B84D62700690459 /* Project object */;
 }

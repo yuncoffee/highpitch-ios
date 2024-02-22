@@ -17,6 +17,7 @@ struct LabelFactory {
         textAlignment: NSTextAlignment) -> UILabel {
         let label = UILabel()
      
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = text
         label.font = font
         label.backgroundColor = backgroundColor

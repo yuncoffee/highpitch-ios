@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class MainTabBarViewController: UITabBarController {
 
@@ -40,5 +41,13 @@ class MainTabBarViewController: UITabBarController {
         
         setViewControllers( vcs.map { UINavigationController(rootViewController: $0) }, animated:  true)
         tabBar.backgroundColor = .white
+    }
+}
+
+struct MainTabBarViewController_Previews: PreviewProvider {
+    static var previews: some View {
+        ViewControllerPreview {
+            MainTabBarViewController()
+        }
     }
 }
