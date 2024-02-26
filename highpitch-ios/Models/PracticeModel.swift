@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct PracticeModel {
     var name: String
     var creatAt: Date
@@ -24,7 +23,7 @@ enum PracticeMediaType {
 
 struct PracticeMedia {
     var type: PracticeMediaType
-    var path: String
+    var url: URL?
 }
 
 struct PracticeAnlysis {

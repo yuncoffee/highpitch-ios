@@ -11,47 +11,29 @@ import PinLayout
 import UIKit
 import SwiftUI
 
-class ProjectsView: UIView {
+final class ProjectsView: UIView {
     fileprivate let rootView = UIView()
-    fileprivate let myView = UIView()
-    fileprivate let myView2 = UIView()
+    fileprivate let collectionView: UICollectionView
+    fileprivate let flowLayout = UICollectionViewFlowLayout()
+    fileprivate let cellTemplate = ProjectCell()
+    
+    fileprivate var projects: [ProjectModel] = []
+    
+    weak var delegate: ProjectsViewDelegate?
     
     init() {
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        
         super.init(frame: .zero)
-        let imageView = UIImageView(image: UIImage(systemName: "heart.fill"))
         
-        let segmentedControl = UISegmentedControl(items: ["Intro", "FlexLayout", "PinLayout"])
-        segmentedControl.selectedSegmentIndex = 0
+        flowLayout.minimumLineSpacing = 0
+        flowLayout.minimumInteritemSpacing = 0
         
-        let label = UILabel()
-        label.text = "Flexbox layouting is simple, powerfull and fast.\n\nFlexLayout syntax is concise and chainable."
-        label.numberOfLines = 0
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(ProjectCell.self, forCellWithReuseIdentifier: ProjectCell.idntifier)
         
-        let bottomLabel = UILabel()
-        bottomLabel.text = "FlexLayout/yoga is incredibly fast, its even faster than manual layout."
-        bottomLabel.numberOfLines = 0
-        
-        // set Column
-        rootView.flex.backgroundColor(.blue).border(2, .red).cornerRadius(24)
-        
-        rootView.flex.direction(.column).padding(12).define { flex in
-            flex.addItem().direction(.row).define { flex in
-                flex.addItem(imageView).width(100).aspectRatio(of: imageView).alignSelf(.center)
-                
-                flex.addItem().direction(.column).paddingLeft(12).grow(1).shrink(1).define { (flex) in
-                    flex.addItem(segmentedControl).marginBottom(12).grow(1)
-                    flex.addItem(label)
-                }
-            }
-            flex.addItem().height(1).marginTop(12).backgroundColor(.lightGray)
-            flex.addItem(bottomLabel).marginTop(12)
-        }
-        myView.backgroundColor = .red
-        myView2.backgroundColor = .yellow
-        
-        addSubview(rootView)
-        addSubview(myView)
-        addSubview(myView2)
+        addSubview(collectionView)
     }
     
     required init?(coder: NSCoder) {
@@ -60,13 +42,45 @@ class ProjectsView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        rootView.pin.top(pin.safeArea.top).horizontally()
-        rootView.flex.layout(mode: .adjustHeight)
-        myView.pin.below(of: rootView).marginTop(24).height(300).width(of: rootView)
-        myView2.pin.below(of: myView).bottom(pin.safeArea.bottom).marginTop(24).width(200)
-        //        myView2.pin.after(of: myView, aligned: .top).bottomRight().marginLeft(10)
+        collectionView.pin.all()
     }
 }
+
+extension ProjectsView {
+    func configure(with projects: [ProjectModel]) {
+        self.projects = projects
+        collectionView.reloadData()
+    }
+    
+    func viewOrientationDidChange() {
+        flowLayout.invalidateLayout()
+    }
+}
+
+// swiftlint: disable line_length
+extension ProjectsView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        projects.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // swiftlint: disable force_cast
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProjectCell.idntifier, for: indexPath) as! ProjectCell
+        // swiftlint: enable force_cast
+        cell.configure(project: projects[indexPath.row])
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        cellTemplate.sizeThatFits(.init(width: collectionView.bounds.width, height: .greatestFiniteMagnitude))
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.pushNavigation(with: projects[indexPath.row])
+    }
+}
+// swiftlint: enable line_length
 
 struct ProjectsView_Preview: PreviewProvider {
     static var previews: some View {

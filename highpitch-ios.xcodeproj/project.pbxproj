@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		204DF4BD2B8C460D0067170C /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4BC2B8C460D0067170C /* ProjectCell.swift */; };
+		204DF4BF2B8C54200067170C /* MockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4BE2B8C54200067170C /* MockModel.swift */; };
+		204DF4C22B8C5BE40067170C /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4C12B8C5BE40067170C /* ProjectViewController.swift */; };
+		204DF4C42B8C643B0067170C /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4C32B8C643B0067170C /* ProjectView.swift */; };
 		20970D5B2B84D62700690459 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970D5A2B84D62700690459 /* AppDelegate.swift */; };
 		20970D5D2B84D62700690459 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970D5C2B84D62700690459 /* SceneDelegate.swift */; };
 		20970D642B84D62800690459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20970D632B84D62800690459 /* Assets.xcassets */; };
@@ -50,6 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		204DF4BC2B8C460D0067170C /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
+		204DF4BE2B8C54200067170C /* MockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModel.swift; sourceTree = "<group>"; };
+		204DF4C12B8C5BE40067170C /* ProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
+		204DF4C32B8C643B0067170C /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
 		20970D572B84D62700690459 /* highpitch-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "highpitch-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20970D5A2B84D62700690459 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20970D5C2B84D62700690459 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		204DF4C02B8C5BB30067170C /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				204DF4C12B8C5BE40067170C /* ProjectViewController.swift */,
+				204DF4C32B8C643B0067170C /* ProjectView.swift */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
 		20970D4E2B84D62700690459 = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +205,7 @@
 				20970E082B85D26000690459 /* Sign */,
 				20970E072B85D25100690459 /* Onboarding */,
 				20970DFC2B85D1C500690459 /* Main */,
+				204DF4C02B8C5BB30067170C /* Project */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -239,6 +257,7 @@
 		20970E0C2B871DE800690459 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				204DF4BE2B8C54200067170C /* MockModel.swift */,
 				20970E0D2B871E1100690459 /* ProjectModel.swift */,
 				20970E0F2B871E2100690459 /* PracticeModel.swift */,
 				20970E112B871E3400690459 /* UserModel.swift */,
@@ -251,6 +270,7 @@
 			children = (
 				20970E012B85D21900690459 /* ProjectsViewController.swift */,
 				20970E212B8730BD00690459 /* ProjectsView.swift */,
+				204DF4BC2B8C460D0067170C /* ProjectCell.swift */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -419,7 +439,11 @@
 			files = (
 				20970E222B8730BD00690459 /* ProjectsView.swift in Sources */,
 				20970DFB2B85D19B00690459 /* MainTabBarViewController.swift in Sources */,
+				204DF4C22B8C5BE40067170C /* ProjectViewController.swift in Sources */,
+				204DF4BF2B8C54200067170C /* MockModel.swift in Sources */,
 				20970D5B2B84D62700690459 /* AppDelegate.swift in Sources */,
+				204DF4BD2B8C460D0067170C /* ProjectCell.swift in Sources */,
+				204DF4C42B8C643B0067170C /* ProjectView.swift in Sources */,
 				20970E1F2B8729CB00690459 /* Preview+Extension.swift in Sources */,
 				20970E022B85D21900690459 /* ProjectsViewController.swift in Sources */,
 				20970E062B85D24800690459 /* SignUpViewController.swift in Sources */,
