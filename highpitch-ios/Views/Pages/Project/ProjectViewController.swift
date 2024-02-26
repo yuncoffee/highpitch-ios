@@ -7,9 +7,12 @@
 
 import UIKit
 import SwiftUI
-import PinLayout
 
-class ProjectViewController: UIViewController {
+protocol ProjectViewDelegate: AnyObject {
+    func pushNavigation(with: PracticeModel)
+}
+
+class ProjectViewController: UIViewController, ProjectViewDelegate {
     // swiftlint: disable force_cast
     fileprivate var mainView: ProjectView {
         return self.view as! ProjectView
@@ -26,18 +29,27 @@ class ProjectViewController: UIViewController {
         super.viewDidLoad()
         print("Iam Here")
         setup()
-        // Do any additional setup after loading the view.
     }
 
     private func setup() {
         print("SetUp..")
+        
     }
     
     override func loadView() {
         view = ProjectView()
+        mainView.practicesView.delegate = self
+        
         if let project = project {
             mainView.configure(with: project)
         }
+    }
+    
+    func pushNavigation(with practice: PracticeModel) {
+        let practiceVC = PracticeViewController()
+        practiceVC.practice = practice
+        
+        navigationController?.pushViewController(practiceVC, animated: true)
     }
 }
 

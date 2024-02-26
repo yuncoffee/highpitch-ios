@@ -25,7 +25,7 @@ class SignInViewController: UIViewController {
     }
     */
     private func setup() {
-        let button = makeButton(withText: "Navigation!")
+        let button = makeButton(withText: "Sign-In")
         view.addSubview(button)
         
         NSLayoutConstraint.activate([

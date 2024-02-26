@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		203EB05D2B8CA0A500FCEF52 /* PracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203EB05C2B8CA0A500FCEF52 /* PracticeViewController.swift */; };
 		204DF4BD2B8C460D0067170C /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4BC2B8C460D0067170C /* ProjectCell.swift */; };
 		204DF4BF2B8C54200067170C /* MockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4BE2B8C54200067170C /* MockModel.swift */; };
 		204DF4C22B8C5BE40067170C /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4C12B8C5BE40067170C /* ProjectViewController.swift */; };
 		204DF4C42B8C643B0067170C /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4C32B8C643B0067170C /* ProjectView.swift */; };
+		204DF4C72B8C8F260067170C /* PracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4C62B8C8F260067170C /* PracticeView.swift */; };
+		204DF4CB2B8C8FE90067170C /* PracticesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4CA2B8C8FE90067170C /* PracticesView.swift */; };
+		204DF4CE2B8C90620067170C /* PracticeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4CD2B8C90620067170C /* PracticeCell.swift */; };
 		20970D5B2B84D62700690459 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970D5A2B84D62700690459 /* AppDelegate.swift */; };
 		20970D5D2B84D62700690459 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970D5C2B84D62700690459 /* SceneDelegate.swift */; };
 		20970D642B84D62800690459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20970D632B84D62800690459 /* Assets.xcassets */; };
@@ -54,10 +58,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		203EB05C2B8CA0A500FCEF52 /* PracticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeViewController.swift; sourceTree = "<group>"; };
 		204DF4BC2B8C460D0067170C /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
 		204DF4BE2B8C54200067170C /* MockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModel.swift; sourceTree = "<group>"; };
 		204DF4C12B8C5BE40067170C /* ProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		204DF4C32B8C643B0067170C /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
+		204DF4C62B8C8F260067170C /* PracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeView.swift; sourceTree = "<group>"; };
+		204DF4CA2B8C8FE90067170C /* PracticesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticesView.swift; sourceTree = "<group>"; };
+		204DF4CD2B8C90620067170C /* PracticeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeCell.swift; sourceTree = "<group>"; };
 		20970D572B84D62700690459 /* highpitch-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "highpitch-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20970D5A2B84D62700690459 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20970D5C2B84D62700690459 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,10 +123,29 @@
 		204DF4C02B8C5BB30067170C /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				204DF4CC2B8C90410067170C /* Practices */,
 				204DF4C12B8C5BE40067170C /* ProjectViewController.swift */,
 				204DF4C32B8C643B0067170C /* ProjectView.swift */,
 			);
 			path = Project;
+			sourceTree = "<group>";
+		};
+		204DF4C52B8C8EF60067170C /* Practice */ = {
+			isa = PBXGroup;
+			children = (
+				204DF4C62B8C8F260067170C /* PracticeView.swift */,
+				203EB05C2B8CA0A500FCEF52 /* PracticeViewController.swift */,
+			);
+			path = Practice;
+			sourceTree = "<group>";
+		};
+		204DF4CC2B8C90410067170C /* Practices */ = {
+			isa = PBXGroup;
+			children = (
+				204DF4CA2B8C8FE90067170C /* PracticesView.swift */,
+				204DF4CD2B8C90620067170C /* PracticeCell.swift */,
+			);
+			path = Practices;
 			sourceTree = "<group>";
 		};
 		20970D4E2B84D62700690459 = {
@@ -206,6 +233,7 @@
 				20970E072B85D25100690459 /* Onboarding */,
 				20970DFC2B85D1C500690459 /* Main */,
 				204DF4C02B8C5BB30067170C /* Project */,
+				204DF4C52B8C8EF60067170C /* Practice */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -442,13 +470,17 @@
 				204DF4C22B8C5BE40067170C /* ProjectViewController.swift in Sources */,
 				204DF4BF2B8C54200067170C /* MockModel.swift in Sources */,
 				20970D5B2B84D62700690459 /* AppDelegate.swift in Sources */,
+				204DF4CE2B8C90620067170C /* PracticeCell.swift in Sources */,
 				204DF4BD2B8C460D0067170C /* ProjectCell.swift in Sources */,
 				204DF4C42B8C643B0067170C /* ProjectView.swift in Sources */,
+				204DF4CB2B8C8FE90067170C /* PracticesView.swift in Sources */,
 				20970E1F2B8729CB00690459 /* Preview+Extension.swift in Sources */,
 				20970E022B85D21900690459 /* ProjectsViewController.swift in Sources */,
 				20970E062B85D24800690459 /* SignUpViewController.swift in Sources */,
 				20970E122B871E3400690459 /* UserModel.swift in Sources */,
+				204DF4C72B8C8F260067170C /* PracticeView.swift in Sources */,
 				20970DFE2B85D1F400690459 /* RecordingViewController.swift in Sources */,
+				203EB05D2B8CA0A500FCEF52 /* PracticeViewController.swift in Sources */,
 				20970E042B85D24100690459 /* SignInViewController.swift in Sources */,
 				20970D5D2B84D62700690459 /* SceneDelegate.swift in Sources */,
 				20970DF02B85CC2500690459 /* OnboardingViewController.swift in Sources */,

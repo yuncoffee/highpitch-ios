@@ -1,5 +1,5 @@
 //
-//  ProjectCell.swift
+//  PracticeCell.swift
 //  highpitch-ios
 //
 //  Created by yuncoffee on 2/26/24.
@@ -10,12 +10,12 @@ import SwiftUI
 import PinLayout
 import FlexLayout
 
-class ProjectCell: UICollectionViewCell {
-    static let identifier = "ProjectCell"
+final class PracticeCell: UICollectionViewCell {
+    static let identifier = "PracticeCell"
     
     fileprivate let titleLabel = UILabel()
     fileprivate let descriptionLabel = UILabel()
-    fileprivate let dateLabel = UILabel()
+    fileprivate let remarkableIconView = UIImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,15 +29,19 @@ class ProjectCell: UICollectionViewCell {
     private func setup() {
         titleLabel.text = "Title"
         descriptionLabel.text = "Description"
-        dateLabel.text = "Date * Time * Duration"
         
-        contentView.flex.define { flex in
-            flex.addItem(titleLabel)
-            flex.addItem(descriptionLabel)
-            flex.addItem(dateLabel)
-            flex.addItem().height(1).backgroundColor(.lightGray)
+        remarkableIconView.image = UIImage(systemName: "star.fill")
+        remarkableIconView.contentMode = .scaleAspectFit
+        
+        contentView.flex.direction(.row).justifyContent(.spaceBetween).define { flex in
+            // left
+            flex.addItem().define { flex in
+                flex.addItem(titleLabel)
+                flex.addItem(descriptionLabel)
+            }
+            // right
+            flex.addItem(remarkableIconView)
         }
-        
     }
     
     private func layout() {
@@ -57,25 +61,18 @@ class ProjectCell: UICollectionViewCell {
     }
 }
 
-extension ProjectCell {
-    func configure(project: ProjectModel) {
-        titleLabel.text = project.name
-        titleLabel.flex.markDirty()
-        
-        descriptionLabel.text = "\(project.practices.count) 개의 연습이 있습니다."
-        descriptionLabel.flex.markDirty()
-        
-        dateLabel.text = project.creatAt.description
-        dateLabel.flex.markDirty()
-        
+extension PracticeCell {
+    func configure(with practice: PracticeModel) {
+        titleLabel.text = practice.name
+
         setNeedsLayout()
     }
 }
 
-struct ProjectCell_Preview: PreviewProvider {
+struct PracticeCell_Preview: PreviewProvider {
     static var previews: some View {
         ViewPreview {
-            ProjectCell()
+            PracticeCell()
         }
     }
 }

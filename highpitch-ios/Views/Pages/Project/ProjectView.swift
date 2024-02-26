@@ -8,10 +8,13 @@
 import Foundation
 import UIKit
 import SwiftUI
+import PinLayout
+import FlexLayout
 
 final class ProjectView: UIView {
     fileprivate let titleLabel = UILabel()
-    
+    let practicesView = PracticesView()
+
     init() {
         super.init(frame: .zero)
         titleLabel.text = "title"
@@ -19,6 +22,7 @@ final class ProjectView: UIView {
         
         backgroundColor = .white
         addSubview(titleLabel)
+        addSubview(practicesView)
     }
     
     required init?(coder: NSCoder) {
@@ -27,13 +31,14 @@ final class ProjectView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        titleLabel.pin.all()
+        practicesView.pin.all()
     }
 }
 
 extension ProjectView {
     func configure(with project: ProjectModel) {
         titleLabel.text = project.name
+        practicesView.configure(with: project.practices)
     }
 }
 

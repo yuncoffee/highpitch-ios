@@ -1,24 +1,24 @@
 //
-//  ProjectsView.swift
+//  PracticesView.swift
 //  highpitch-ios
 //
-//  Created by yuncoffee on 2/22/24.
+//  Created by yuncoffee on 2/26/24.
 //
 
 import Foundation
-import FlexLayout
-import PinLayout
 import UIKit
 import SwiftUI
+import PinLayout
+import FlexLayout
 
-final class ProjectsView: UIView {
+final class PracticesView: UIView {
     fileprivate let collectionView: UICollectionView
     fileprivate let flowLayout = UICollectionViewFlowLayout()
-    fileprivate let cellTemplate = ProjectCell()
+    fileprivate let cellTemplate = PracticeCell()
     
-    fileprivate var projects: [ProjectModel] = []
+    fileprivate var practices: [PracticeModel] = []
     
-    weak var delegate: ProjectsViewDelegate?
+    weak var delegate: ProjectViewDelegate?
     
     init() {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
@@ -27,10 +27,10 @@ final class ProjectsView: UIView {
         
         flowLayout.minimumLineSpacing = 0
         flowLayout.minimumInteritemSpacing = 0
-        
+
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(ProjectCell.self, forCellWithReuseIdentifier: ProjectCell.identifier)
+        collectionView.register(PracticeCell.self, forCellWithReuseIdentifier: PracticeCell.identifier)
         
         addSubview(collectionView)
     }
@@ -45,9 +45,9 @@ final class ProjectsView: UIView {
     }
 }
 
-extension ProjectsView {
-    func configure(with projects: [ProjectModel]) {
-        self.projects = projects
+extension PracticesView {
+    func configure(with practices: [PracticeModel]) {
+        self.practices = practices
         collectionView.reloadData()
     }
     
@@ -57,17 +57,17 @@ extension ProjectsView {
 }
 
 // swiftlint: disable line_length
-extension ProjectsView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension PracticesView:  UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        projects.count
+        practices.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // swiftlint: disable force_cast
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProjectCell.identifier, for: indexPath) as! ProjectCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PracticeCell.identifier, for: indexPath) as! PracticeCell
         // swiftlint: enable force_cast
-        cell.configure(project: projects[indexPath.row])
-        
+        cell.configure(with: practices[indexPath.row])
+
         return cell
     }
     
@@ -76,15 +76,15 @@ extension ProjectsView: UICollectionViewDelegateFlowLayout, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.pushNavigation(with: projects[indexPath.row])
+        delegate?.pushNavigation(with: practices[indexPath.row])
     }
 }
 // swiftlint: enable line_length
 
-struct ProjectsView_Preview: PreviewProvider {
+struct PracticesView_Preview: PreviewProvider {
     static var previews: some View {
         ViewPreview {
-            ProjectsView()
+            PracticesView()
         }
     }
 }
