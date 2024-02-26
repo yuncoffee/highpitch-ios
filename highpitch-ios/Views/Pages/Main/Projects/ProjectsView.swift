@@ -60,10 +60,10 @@ class ProjectsView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        rootView.pin.all()
+        rootView.pin.top(pin.safeArea.top).horizontally()
         rootView.flex.layout(mode: .adjustHeight)
-        myView.pin.below(of: rootView).topLeft().marginTop(24).width(200).height(300)
-        myView2.pin.below(of: myView).all().marginTop(24)
+        myView.pin.below(of: rootView).marginTop(24).height(300).width(of: rootView)
+        myView2.pin.below(of: myView).bottom(pin.safeArea.bottom).marginTop(24).width(200)
         //        myView2.pin.after(of: myView, aligned: .top).bottomRight().marginLeft(10)
     }
 }

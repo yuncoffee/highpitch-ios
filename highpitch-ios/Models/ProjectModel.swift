@@ -8,5 +8,8 @@
 import Foundation
 
 struct ProjectModel {
-    
+    var name: String
+    var creatAt: Date
+    var editAt: Date
+    var practices: [PracticeModel] = []
 }
