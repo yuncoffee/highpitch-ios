@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		203EB05D2B8CA0A500FCEF52 /* PracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203EB05C2B8CA0A500FCEF52 /* PracticeViewController.swift */; };
+		203EB0752B8D6A6600FCEF52 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 203EB0742B8D6A6600FCEF52 /* RxBlocking */; };
+		203EB0772B8D6A6600FCEF52 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 203EB0762B8D6A6600FCEF52 /* RxCocoa */; };
+		203EB0792B8D6A6600FCEF52 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 203EB0782B8D6A6600FCEF52 /* RxRelay */; };
+		203EB07B2B8D6A6600FCEF52 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 203EB07A2B8D6A6600FCEF52 /* RxSwift */; };
+		203EB07D2B8D6A6600FCEF52 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 203EB07C2B8D6A6600FCEF52 /* RxTest */; };
 		204DF4BD2B8C460D0067170C /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4BC2B8C460D0067170C /* ProjectCell.swift */; };
 		204DF4BF2B8C54200067170C /* MockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4BE2B8C54200067170C /* MockModel.swift */; };
 		204DF4C22B8C5BE40067170C /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4C12B8C5BE40067170C /* ProjectViewController.swift */; };
@@ -98,7 +103,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				203EB07D2B8D6A6600FCEF52 /* RxTest in Frameworks */,
+				203EB07B2B8D6A6600FCEF52 /* RxSwift in Frameworks */,
+				203EB0792B8D6A6600FCEF52 /* RxRelay in Frameworks */,
 				20970E1D2B87282300690459 /* PinLayout in Frameworks */,
+				203EB0752B8D6A6600FCEF52 /* RxBlocking in Frameworks */,
+				203EB0772B8D6A6600FCEF52 /* RxCocoa in Frameworks */,
 				20970E1A2B8727FD00690459 /* FlexLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,8 +143,8 @@
 		204DF4C52B8C8EF60067170C /* Practice */ = {
 			isa = PBXGroup;
 			children = (
-				204DF4C62B8C8F260067170C /* PracticeView.swift */,
 				203EB05C2B8CA0A500FCEF52 /* PracticeViewController.swift */,
+				204DF4C62B8C8F260067170C /* PracticeView.swift */,
 			);
 			path = Practice;
 			sourceTree = "<group>";
@@ -323,6 +333,11 @@
 			packageProductDependencies = (
 				20970E192B8727FD00690459 /* FlexLayout */,
 				20970E1C2B87282300690459 /* PinLayout */,
+				203EB0742B8D6A6600FCEF52 /* RxBlocking */,
+				203EB0762B8D6A6600FCEF52 /* RxCocoa */,
+				203EB0782B8D6A6600FCEF52 /* RxRelay */,
+				203EB07A2B8D6A6600FCEF52 /* RxSwift */,
+				203EB07C2B8D6A6600FCEF52 /* RxTest */,
 			);
 			productName = "highpitch-ios";
 			productReference = 20970D572B84D62700690459 /* highpitch-ios.app */;
@@ -399,6 +414,7 @@
 			packageReferences = (
 				20970E182B8727FD00690459 /* XCRemoteSwiftPackageReference "FlexLayout" */,
 				20970E1B2B87282300690459 /* XCRemoteSwiftPackageReference "PinLayout" */,
+				203EB0732B8D6A6600FCEF52 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 20970D582B84D62700690459 /* Products */;
 			projectDirPath = "";
@@ -832,6 +848,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		203EB0732B8D6A6600FCEF52 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.0;
+			};
+		};
 		20970E182B8727FD00690459 /* XCRemoteSwiftPackageReference "FlexLayout" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/layoutBox/FlexLayout.git";
@@ -851,6 +875,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		203EB0742B8D6A6600FCEF52 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 203EB0732B8D6A6600FCEF52 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		203EB0762B8D6A6600FCEF52 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 203EB0732B8D6A6600FCEF52 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		203EB0782B8D6A6600FCEF52 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 203EB0732B8D6A6600FCEF52 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		203EB07A2B8D6A6600FCEF52 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 203EB0732B8D6A6600FCEF52 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		203EB07C2B8D6A6600FCEF52 /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 203EB0732B8D6A6600FCEF52 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
+		};
 		20970E192B8727FD00690459 /* FlexLayout */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 20970E182B8727FD00690459 /* XCRemoteSwiftPackageReference "FlexLayout" */;

@@ -48,6 +48,10 @@ final class ProjectsViewController: UIViewController, ProjectsViewDelegate {
         
         navigationController?.pushViewController(projectVC, animated: true)
     }
+    
+    deinit {
+        print("ProjectsVC Deinit")
+    }
 }
 
 struct ProjectsViewController_Previews: PreviewProvider {

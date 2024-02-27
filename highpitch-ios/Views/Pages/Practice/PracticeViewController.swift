@@ -31,4 +31,8 @@ class PracticeViewController: UIViewController {
             view = PracticeView(practice: practice)
         }
     }
+    
+    deinit {
+        print("PracticeVC Deinit")
+    }
 }

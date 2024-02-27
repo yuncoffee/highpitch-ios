@@ -17,6 +17,15 @@
         "revision" : "8eaa3a15e4dcabaca4c95aea4c0ff0c9b4a67213",
         "version" : "1.10.5"
       }
+    },
+    {
+      "identity" : "rxswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveX/RxSwift",
+      "state" : {
+        "revision" : "9dcaa4b333db437b0fbfaf453fad29069044a8b4",
+        "version" : "6.6.0"
+      }
     }
   ],
   "version" : 2

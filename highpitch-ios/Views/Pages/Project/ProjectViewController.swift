@@ -32,7 +32,7 @@ class ProjectViewController: UIViewController, ProjectViewDelegate {
     }
 
     private func setup() {
-        print("SetUp..")
+        title = "Project"
         
     }
     
@@ -50,6 +50,10 @@ class ProjectViewController: UIViewController, ProjectViewDelegate {
         practiceVC.practice = practice
         
         navigationController?.pushViewController(practiceVC, animated: true)
+    }
+    
+    deinit {
+        print("ProjectVC Deinit")
     }
 }
 
