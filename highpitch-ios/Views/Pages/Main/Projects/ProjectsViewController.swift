@@ -37,8 +37,7 @@ final class ProjectsViewController: UIViewController, ProjectsViewDelegate {
     // swiftlint: enable line_length
     
     private func setup() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        title = "My Projects"
+//        navigationController?.navigationBar.prefersLargeTitles = true
         mainView.delegate = self
     }
     

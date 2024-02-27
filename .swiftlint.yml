@@ -67,6 +67,7 @@ identifier_name:
     - min
     - max
     - epm
+    - hex
   allowed_symbols: ["_"]
 opt_in_rules:
   - missing_docs

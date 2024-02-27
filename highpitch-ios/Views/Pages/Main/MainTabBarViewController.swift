@@ -15,15 +15,6 @@ class MainTabBarViewController: UITabBarController {
         // Do any additional setup after loading the view.
         setup()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     private func setup() {
         let vcs = [ProjectsViewController(), RecordingViewController(), SettingsViewController()]
@@ -33,14 +24,36 @@ class MainTabBarViewController: UITabBarController {
             UITabBarItem(title: "Settings", image: UIImage(systemName: "gearshape.fill"), tag: 2)
         ]
         
+        let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(addTapped))
+        let notiButton = UIBarButtonItem(image: UIImage(systemName: "bell.fill"), style: .plain, target: self, action: #selector(playTapped))
+        
+        searchButton.tintColor = .point
+        notiButton.tintColor = .point
+        
+        let symbol = UIImage(named: "headerSymbol")?
+            .resizeImage(size: .init(width: 147, height: 26))
+            
+        let mainSymbol = UIBarButtonItem(image: symbol, style: .plain, target: self, action: #selector(addTapped))
+        mainSymbol.tintColor = .point
+        
         vcs.enumerated().forEach { index, viewController in
             viewController.tabBarItem = tabBarItems[index]
-            viewController.navigationItem.largeTitleDisplayMode = .always
             viewController.navigationItem.title = tabBarItems[index].title
+            viewController.navigationItem.leftBarButtonItem = mainSymbol
+            viewController.navigationItem.rightBarButtonItems = [notiButton, searchButton]
+            viewController.navigationItem.title = nil
         }
         
         setViewControllers( vcs.map { UINavigationController(rootViewController: $0) }, animated:  true)
         tabBar.backgroundColor = .white
+    }
+    
+    @objc func addTapped() {
+        print("Tap!")
+    }
+    
+    @objc func playTapped() {
+        print("Play!")
     }
 }
 
