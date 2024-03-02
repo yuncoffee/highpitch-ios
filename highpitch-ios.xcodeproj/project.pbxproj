@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		203EB05D2B8CA0A500FCEF52 /* PracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203EB05C2B8CA0A500FCEF52 /* PracticeViewController.swift */; };
+		2043C33E2B8F057B00B3476C /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 2043C33D2B8F057B00B3476C /* Differentiator */; };
+		2043C3402B8F057B00B3476C /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 2043C33F2B8F057B00B3476C /* RxDataSources */; };
 		204DF4BD2B8C460D0067170C /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4BC2B8C460D0067170C /* ProjectCell.swift */; };
 		204DF4BF2B8C54200067170C /* MockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4BE2B8C54200067170C /* MockModel.swift */; };
 		204DF4C22B8C5BE40067170C /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4C12B8C5BE40067170C /* ProjectViewController.swift */; };
@@ -38,12 +40,16 @@
 		20970E1D2B87282300690459 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 20970E1C2B87282300690459 /* PinLayout */; };
 		20970E1F2B8729CB00690459 /* Preview+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E1E2B8729CB00690459 /* Preview+Extension.swift */; };
 		20970E222B8730BD00690459 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E212B8730BD00690459 /* ProjectsView.swift */; };
+		20E352A52B9334F000180508 /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E352A42B9334F000180508 /* ProjectService.swift */; };
+		20E352A82B933E9700180508 /* UseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E352A72B933E9700180508 /* UseCases.swift */; };
 		20F545572B8D6DFE004B8462 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 20F545562B8D6DFE004B8462 /* RxCocoa */; };
 		20F545592B8D6DFE004B8462 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 20F545582B8D6DFE004B8462 /* RxRelay */; };
 		20F5455B2B8D6DFE004B8462 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 20F5455A2B8D6DFE004B8462 /* RxSwift */; };
 		20F5455D2B8D717D004B8462 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F5455C2B8D717D004B8462 /* UIImage+Extension.swift */; };
 		20F5455F2B8D73AE004B8462 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F5455E2B8D73AE004B8462 /* UIColor+Extension.swift */; };
 		20F545622B8DABF9004B8462 /* ProjectHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F545612B8DABF9004B8462 /* ProjectHeaderCell.swift */; };
+		20F545642B8DB2D7004B8462 /* ProjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F545632B8DB2D7004B8462 /* ProjectsViewModel.swift */; };
+		20F545662B8DB3AC004B8462 /* Type+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F545652B8DB3AC004B8462 /* Type+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,9 +103,13 @@
 		20970E162B8724EB00690459 /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
 		20970E1E2B8729CB00690459 /* Preview+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+Extension.swift"; sourceTree = "<group>"; };
 		20970E212B8730BD00690459 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
+		20E352A42B9334F000180508 /* ProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectService.swift; sourceTree = "<group>"; };
+		20E352A72B933E9700180508 /* UseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCases.swift; sourceTree = "<group>"; };
 		20F5455C2B8D717D004B8462 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		20F5455E2B8D73AE004B8462 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		20F545612B8DABF9004B8462 /* ProjectHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHeaderCell.swift; sourceTree = "<group>"; };
+		20F545632B8DB2D7004B8462 /* ProjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewModel.swift; sourceTree = "<group>"; };
+		20F545652B8DB3AC004B8462 /* Type+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Type+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +121,8 @@
 				20970E1D2B87282300690459 /* PinLayout in Frameworks */,
 				20F5455B2B8D6DFE004B8462 /* RxSwift in Frameworks */,
 				20F545592B8D6DFE004B8462 /* RxRelay in Frameworks */,
+				2043C3402B8F057B00B3476C /* RxDataSources in Frameworks */,
+				2043C33E2B8F057B00B3476C /* Differentiator in Frameworks */,
 				20970E1A2B8727FD00690459 /* FlexLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,8 +197,10 @@
 			isa = PBXGroup;
 			children = (
 				20970DEA2B85CB1500690459 /* App */,
+				20E352A62B933E7900180508 /* Protocols */,
 				20970E092B85E27300690459 /* Extension */,
 				20970E0C2B871DE800690459 /* Models */,
+				20E352A32B9334B000180508 /* Service */,
 				20970DEC2B85CB9600690459 /* Views */,
 			);
 			path = "highpitch-ios";
@@ -292,6 +306,7 @@
 				20970E1E2B8729CB00690459 /* Preview+Extension.swift */,
 				20F5455C2B8D717D004B8462 /* UIImage+Extension.swift */,
 				20F5455E2B8D73AE004B8462 /* UIColor+Extension.swift */,
+				20F545652B8DB3AC004B8462 /* Type+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -313,8 +328,25 @@
 				20F545602B8DABDF004B8462 /* Cell */,
 				20970E012B85D21900690459 /* ProjectsViewController.swift */,
 				20970E212B8730BD00690459 /* ProjectsView.swift */,
+				20F545632B8DB2D7004B8462 /* ProjectsViewModel.swift */,
 			);
 			path = Projects;
+			sourceTree = "<group>";
+		};
+		20E352A32B9334B000180508 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				20E352A42B9334F000180508 /* ProjectService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		20E352A62B933E7900180508 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				20E352A72B933E9700180508 /* UseCases.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		20F545602B8DABDF004B8462 /* Cell */ = {
@@ -349,6 +381,8 @@
 				20F545562B8D6DFE004B8462 /* RxCocoa */,
 				20F545582B8D6DFE004B8462 /* RxRelay */,
 				20F5455A2B8D6DFE004B8462 /* RxSwift */,
+				2043C33D2B8F057B00B3476C /* Differentiator */,
+				2043C33F2B8F057B00B3476C /* RxDataSources */,
 			);
 			productName = "highpitch-ios";
 			productReference = 20970D572B84D62700690459 /* highpitch-ios.app */;
@@ -426,6 +460,7 @@
 				20970E182B8727FD00690459 /* XCRemoteSwiftPackageReference "FlexLayout" */,
 				20970E1B2B87282300690459 /* XCRemoteSwiftPackageReference "PinLayout" */,
 				20F545552B8D6DFE004B8462 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				2043C33C2B8F057B00B3476C /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = 20970D582B84D62700690459 /* Products */;
 			projectDirPath = "";
@@ -501,10 +536,13 @@
 				20970D5B2B84D62700690459 /* AppDelegate.swift in Sources */,
 				204DF4CE2B8C90620067170C /* PracticeCell.swift in Sources */,
 				204DF4BD2B8C460D0067170C /* ProjectCell.swift in Sources */,
+				20F545662B8DB3AC004B8462 /* Type+Extension.swift in Sources */,
 				204DF4C42B8C643B0067170C /* ProjectView.swift in Sources */,
+				20F545642B8DB2D7004B8462 /* ProjectsViewModel.swift in Sources */,
 				20F5455F2B8D73AE004B8462 /* UIColor+Extension.swift in Sources */,
 				204DF4CB2B8C8FE90067170C /* PracticesView.swift in Sources */,
 				20970E1F2B8729CB00690459 /* Preview+Extension.swift in Sources */,
+				20E352A82B933E9700180508 /* UseCases.swift in Sources */,
 				20970E022B85D21900690459 /* ProjectsViewController.swift in Sources */,
 				20970E062B85D24800690459 /* SignUpViewController.swift in Sources */,
 				20970E122B871E3400690459 /* UserModel.swift in Sources */,
@@ -515,6 +553,7 @@
 				20970D5D2B84D62700690459 /* SceneDelegate.swift in Sources */,
 				20970DF02B85CC2500690459 /* OnboardingViewController.swift in Sources */,
 				20970E002B85D20A00690459 /* SettingsViewController.swift in Sources */,
+				20E352A52B9334F000180508 /* ProjectService.swift in Sources */,
 				20970E102B871E2100690459 /* PracticeModel.swift in Sources */,
 				20970E172B8724EB00690459 /* LabelFactory.swift in Sources */,
 				20970E0E2B871E1100690459 /* ProjectModel.swift in Sources */,
@@ -862,6 +901,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2043C33C2B8F057B00B3476C /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
 		20970E182B8727FD00690459 /* XCRemoteSwiftPackageReference "FlexLayout" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/layoutBox/FlexLayout.git";
@@ -889,6 +936,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2043C33D2B8F057B00B3476C /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2043C33C2B8F057B00B3476C /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		2043C33F2B8F057B00B3476C /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2043C33C2B8F057B00B3476C /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
 		20970E192B8727FD00690459 /* FlexLayout */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 20970E182B8727FD00690459 /* XCRemoteSwiftPackageReference "FlexLayout" */;

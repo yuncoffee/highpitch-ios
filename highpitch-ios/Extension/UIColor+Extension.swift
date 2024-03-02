@@ -9,8 +9,14 @@ import Foundation
 import UIKit
 
 extension UIColor {
+    static let point = UIColor(hex: "#3A3241")
+}
+
+extension UIColor {
     convenience init(hex: String, alpha: CGFloat = 1.0) {
+        // swiftlint: disable line_length
         var hexFormatted: String = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
+        // swiftlint: enable line_length
         
         if hexFormatted.hasPrefix("#") {
             hexFormatted = String(hexFormatted.dropFirst())
@@ -26,8 +32,4 @@ extension UIColor {
                   blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
                   alpha: alpha)
     }
-}
-
-extension UIColor {
-    static let point = UIColor(hex: "#3A3241")
 }

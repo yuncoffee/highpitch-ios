@@ -33,7 +33,6 @@ class ProjectViewController: UIViewController, ProjectViewDelegate {
 
     private func setup() {
         title = "Project"
-        
     }
     
     override func loadView() {

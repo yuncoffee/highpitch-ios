@@ -8,6 +8,7 @@
 import Foundation
 
 struct PracticeModel {
+    let id = UUID().uuidString
     var name: String
     var creatAt: Date
     var isRemarkable: Bool = false

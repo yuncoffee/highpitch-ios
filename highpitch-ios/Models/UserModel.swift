@@ -18,11 +18,11 @@ struct UserModel {
     var type: SignType
     var name: String
     var profile: UIImage?
-    var epm: UserEpm
+    var epm: UserSpm
     var fillerWords: [String] = []
 }
 
-struct UserEpm {
+struct UserSpm {
     var min: Double
     var max: Double
     

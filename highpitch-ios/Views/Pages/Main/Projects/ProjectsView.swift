@@ -13,9 +13,10 @@ import SwiftUI
 
 final class ProjectsView: UIView {
     fileprivate let rootContainerView = UIView()
-    fileprivate let headerView = UIView()
+    let headerView = UIButton()
+    let myLabel = UILabel()
     
-    fileprivate let collectionView: UICollectionView
+    let collectionView: UICollectionView
     fileprivate let flowLayout = UICollectionViewFlowLayout()
     fileprivate let cellTemplate = ProjectCell()
     fileprivate let headerCellTemplate = ProjectHeaderCell()
@@ -23,7 +24,7 @@ final class ProjectsView: UIView {
     fileprivate var projects: [ProjectModel] = []
     
     weak var delegate: ProjectsViewDelegate?
-    
+
     init() {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         
@@ -38,7 +39,10 @@ final class ProjectsView: UIView {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(ProjectCell.self, forCellWithReuseIdentifier: ProjectCell.identifier)
-        collectionView.register(ProjectHeaderCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProjectHeaderCell.identifier)
+        collectionView.register(ProjectHeaderCell.self, 
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: ProjectHeaderCell.identifier
+        )
         
         collectionView.backgroundColor = .yellow
         
@@ -50,13 +54,16 @@ final class ProjectsView: UIView {
         label2.text = "powerfull and fast.????"
         label2.numberOfLines = 0
         
+        myLabel.text = "World!"
+        
         rootContainerView.flex.padding(16).define { flex in
             flex.addItem(label)
             flex.addItem(label2).marginTop(16)
         }
-        
+
         headerView.flex.cornerRadius(32).backgroundColor(.blue).width(64).height(64)
         
+        addSubview(myLabel)
         addSubview(rootContainerView)
         addSubview(collectionView)
         addSubview(headerView)
@@ -68,8 +75,12 @@ final class ProjectsView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        collectionView.pin.all(pin.safeArea)
+        myLabel.pin.top(pin.safeArea).horizontally()
+        myLabel.flex.layout(mode: .adjustHeight)
+        
+        collectionView.pin.below(of: myLabel).bottom().horizontally()
         collectionView.flex.layout(mode: .adjustHeight)
+        
         headerView.pin.bottom(24).right(16).width(64).height(64).margin(pin.safeArea)
         
     }

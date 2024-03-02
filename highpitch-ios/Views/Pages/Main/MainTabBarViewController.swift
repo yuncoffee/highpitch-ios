@@ -24,8 +24,13 @@ class MainTabBarViewController: UITabBarController {
             UITabBarItem(title: "Settings", image: UIImage(systemName: "gearshape.fill"), tag: 2)
         ]
         
-        let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(addTapped))
-        let notiButton = UIBarButtonItem(image: UIImage(systemName: "bell.fill"), style: .plain, target: self, action: #selector(playTapped))
+        let searchButton = UIBarButtonItem(barButtonSystemItem: .search, 
+                                           target: self,
+                                           action: #selector(addTapped))
+        let notiButton = UIBarButtonItem(image: UIImage(systemName: "bell.fill"), 
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(playTapped))
         
         searchButton.tintColor = .point
         notiButton.tintColor = .point
@@ -33,7 +38,10 @@ class MainTabBarViewController: UITabBarController {
         let symbol = UIImage(named: "headerSymbol")?
             .resizeImage(size: .init(width: 147, height: 26))
             
-        let mainSymbol = UIBarButtonItem(image: symbol, style: .plain, target: self, action: #selector(addTapped))
+        let mainSymbol = UIBarButtonItem(image: symbol, 
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(addTapped))
         mainSymbol.tintColor = .point
         
         vcs.enumerated().forEach { index, viewController in

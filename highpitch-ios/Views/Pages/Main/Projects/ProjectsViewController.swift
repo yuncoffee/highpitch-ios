@@ -7,6 +7,8 @@
 
 import UIKit
 import SwiftUI
+import RxSwift
+import RxCocoa
 
 protocol ProjectsViewDelegate: AnyObject {
     func pushNavigation(with: ProjectModel)
@@ -20,13 +22,18 @@ final class ProjectsViewController: UIViewController, ProjectsViewDelegate {
     }
     // swiftlint: enable force_cast
     
+    private let vm = ProjectsViewModel()
+    private let disposeBag = DisposeBag()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        bind()
     }
     
     override func loadView() {
         view = ProjectsView()
+        // view가 로드된 이후에 데이터를 바인딩한다.
         mainView.configure(with: MockModel.sampleProjects)
     }
     
@@ -37,15 +44,23 @@ final class ProjectsViewController: UIViewController, ProjectsViewDelegate {
     // swiftlint: enable line_length
     
     private func setup() {
-//        navigationController?.navigationBar.prefersLargeTitles = true
         mainView.delegate = self
     }
     
     func pushNavigation(with project: ProjectModel) {
         let projectVC = ProjectViewController()
         projectVC.configure(with: project)
-        
         navigationController?.pushViewController(projectVC, animated: true)
+    }
+    
+    func bind() {
+        let input = ProjectsViewModel.Input(click: mainView.headerView.rx.tap)
+        
+        let output = vm.transform(input: input)
+        
+        output.text
+            .drive(mainView.myLabel.rx.text)
+            .disposed(by: disposeBag)
     }
     
     deinit {
