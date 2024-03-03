@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class PracticeViewController: UIViewController {
+class PracticeDetailViewController: UIViewController {
     // swiftlint: disable force_cast
     fileprivate var mainView: PracticeView {
         return self.view as! PracticeView

@@ -66,7 +66,10 @@ final class MyProjectViewController: UIViewController, MyProjectViewDelegate {
     
     private func setup() {
         mainView.delegate = self
-        vm.sections.accept([SectionOfProjectModel(model: "내 프로젝트", items: MockModel.sampleProjects)])
+        vm.sections.accept([
+            SectionOfProjectModel(model: "내 프로젝트", items: MockModel.sampleProjects),
+            SectionOfProjectModel(model: "너 프로젝트", items: MockModel.sampleProjects)
+        ])
     }
 
     private func bind() {
@@ -103,8 +106,8 @@ final class MyProjectViewController: UIViewController, MyProjectViewDelegate {
         case .recording:
             vc = RecordingViewController()
         case .projectDetail:
-            vc = ProjectViewController()
-            if let vc = vc as? ProjectViewController, let project = project {
+            vc = ProjectDetailViewController()
+            if let vc = vc as? ProjectDetailViewController, let project = project {
                 vc.configure(with: project)
             }
         default:

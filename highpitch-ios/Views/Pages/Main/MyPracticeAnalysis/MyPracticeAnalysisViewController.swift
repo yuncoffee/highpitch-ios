@@ -9,7 +9,7 @@ import UIKit
 
 class MyPracticeAnalysisViewController: UIViewController {
     private let label = LabelFactory.build(text: "MyPracticeAnalysisView",
-                                           font: .preferredFont(forTextStyle: .body),
+                                           font: .pretendard(name: .regular, size: 17),
                                            textAlignment: .center)
 
     override func viewDidLoad() {

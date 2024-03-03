@@ -12,7 +12,7 @@ protocol ProjectViewDelegate: AnyObject {
     func pushNavigation(with: PracticeModel)
 }
 
-class ProjectViewController: UIViewController, ProjectViewDelegate {
+class ProjectDetailViewController: UIViewController, ProjectViewDelegate {
     // swiftlint: disable force_cast
     fileprivate var mainView: ProjectView {
         return self.view as! ProjectView
@@ -29,6 +29,14 @@ class ProjectViewController: UIViewController, ProjectViewDelegate {
         super.viewDidLoad()
         print("Iam Here")
         setup()
+        print("HHHH")
+        UIFont.familyNames.sorted().forEach { familyName in
+            print("*** \(familyName) ***")
+            UIFont.fontNames(forFamilyName: familyName).forEach { fontName in
+                print("\(fontName)")
+            }
+            print("---------------------")
+        }
     }
 
     private func setup() {
@@ -45,7 +53,7 @@ class ProjectViewController: UIViewController, ProjectViewDelegate {
     }
     
     func pushNavigation(with practice: PracticeModel) {
-        let practiceVC = PracticeViewController()
+        let practiceVC = PracticeDetailViewController()
         practiceVC.practice = practice
         
         navigationController?.pushViewController(practiceVC, animated: true)
@@ -59,7 +67,7 @@ class ProjectViewController: UIViewController, ProjectViewDelegate {
 struct ProjectViewController_Previews: PreviewProvider {
     static var previews: some View {
         ViewControllerPreview {
-            ProjectViewController()
+            ProjectDetailViewController()
         }
     }
 }
