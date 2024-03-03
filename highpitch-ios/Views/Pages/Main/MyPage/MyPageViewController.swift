@@ -8,7 +8,7 @@
 import UIKit
 import PinLayout
 
-class SettingsViewController: UIViewController {
+class MyPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

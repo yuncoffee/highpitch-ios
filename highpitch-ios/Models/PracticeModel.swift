@@ -13,7 +13,7 @@ struct PracticeModel {
     var creatAt: Date
     var isRemarkable: Bool = false
     var isLocalStored: Bool = true
-    var analysis: PracticeAnlysis
+    var analysis: PracticeAnalysis
     var media: PracticeMedia
 }
 
@@ -27,6 +27,6 @@ struct PracticeMedia {
     var url: URL?
 }
 
-struct PracticeAnlysis {
+struct PracticeAnalysis {
     
 }

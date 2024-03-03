@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-final class ProjectsViewModel: ViewModelType {
+final class MyProjectViewModel: ViewModelType {
     
     let disposeBag = DisposeBag()
     let projects = BehaviorRelay(value: [ProjectModel]())

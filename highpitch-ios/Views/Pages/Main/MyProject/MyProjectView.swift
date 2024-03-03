@@ -11,7 +11,7 @@ import PinLayout
 import UIKit
 import SwiftUI
 
-final class ProjectsView: UIView {
+final class MyProjectView: UIView {
     fileprivate let rootContainerView = UIView()
     let headerView = UIButton()
     let myLabel = UILabel()
@@ -23,7 +23,7 @@ final class ProjectsView: UIView {
     
     fileprivate var projects: [ProjectModel] = []
     
-    weak var delegate: ProjectsViewDelegate?
+    weak var delegate: MyProjectViewDelegate?
 
     init() {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
@@ -86,7 +86,7 @@ final class ProjectsView: UIView {
     }
 }
 
-extension ProjectsView {
+extension MyProjectView {
     func configure(with projects: [ProjectModel]) {
         self.projects = projects
         collectionView.reloadData()
@@ -98,7 +98,7 @@ extension ProjectsView {
 }
 
 // swiftlint: disable line_length
-extension ProjectsView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension MyProjectView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         projects.count
     }
@@ -137,7 +137,7 @@ extension ProjectsView: UICollectionViewDelegateFlowLayout, UICollectionViewData
 
 struct ProjectsView_Preview: PreviewProvider {
     static var previews: some View {
-        let view = ProjectsView()
+        let view = MyProjectView()
         view.configure(with: MockModel.sampleProjects)
         
         return ViewPreview {

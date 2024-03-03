@@ -10,19 +10,19 @@ import SwiftUI
 import RxSwift
 import RxCocoa
 
-protocol ProjectsViewDelegate: AnyObject {
+protocol MyProjectViewDelegate: AnyObject {
     func pushNavigation(with: ProjectModel)
 }
 
-final class ProjectsViewController: UIViewController, ProjectsViewDelegate {
+final class MyProjectViewController: UIViewController, MyProjectViewDelegate {
     
     // swiftlint: disable force_cast
-    fileprivate var mainView: ProjectsView {
-        return self.view as! ProjectsView
+    fileprivate var mainView: MyProjectView {
+        return self.view as! MyProjectView
     }
     // swiftlint: enable force_cast
     
-    private let vm = ProjectsViewModel()
+    private let vm = MyProjectViewModel()
     private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
@@ -32,7 +32,7 @@ final class ProjectsViewController: UIViewController, ProjectsViewDelegate {
     }
     
     override func loadView() {
-        view = ProjectsView()
+        view = MyProjectView()
         // view가 로드된 이후에 데이터를 바인딩한다.
         mainView.configure(with: MockModel.sampleProjects)
     }
@@ -54,7 +54,7 @@ final class ProjectsViewController: UIViewController, ProjectsViewDelegate {
     }
     
     func bind() {
-        let input = ProjectsViewModel.Input(click: mainView.headerView.rx.tap)
+        let input = MyProjectViewModel.Input(click: mainView.headerView.rx.tap)
         
         let output = vm.transform(input: input)
         
@@ -71,7 +71,7 @@ final class ProjectsViewController: UIViewController, ProjectsViewDelegate {
 struct ProjectsViewController_Previews: PreviewProvider {
     static var previews: some View {
         ViewControllerPreview {
-            ProjectsViewController()
+            MyProjectViewController()
         }
     }
 }

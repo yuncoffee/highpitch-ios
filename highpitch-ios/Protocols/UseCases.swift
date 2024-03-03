@@ -8,6 +8,12 @@
 import Foundation
 import AVFoundation
 
+enum Links {
+    case recording
+    case searchProject
+    case notification
+}
+
 protocol ProjectUseCase {
     func fetchs() -> [ProjectModel]
     func update(_ item: ProjectModel) // ID로 변경하는게 좋을듯
@@ -25,11 +31,11 @@ protocol PracticeUseCase {
     func add(_ item: PracticeModel)
     func remark(_ id: String)
     func requestMedia(_ id: String, type: PracticeMedia)
-    func requestAnlysis(_ id: String) -> PracticeAnlysis
+    func requestAnalysis(_ id: String) -> PracticeAnalysis
 }
 
 protocol AnlaysisUseCase {
-    func analysis(media: URL) -> PracticeAnlysis
+    func analysis(media: URL) -> PracticeAnalysis
 }
 
 protocol UserUseCase {
@@ -37,7 +43,7 @@ protocol UserUseCase {
     func signUp(email: String, password: String)
     func signOut()
     func leave()
-    func updateBenchmark(spm: UserSpm)
+    func updateBenchmark(_ userSpm: UserSpm)
     func updateProfile(image: URL)
     func updatePassword(password: String)
 }

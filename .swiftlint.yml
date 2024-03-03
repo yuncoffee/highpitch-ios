@@ -73,4 +73,5 @@ identifier_name:
 opt_in_rules:
   - missing_docs
 reporter: "xcode" # 보고 유형 (xcode, json, csv, codeclimate, checkstyle, junit, html, emoji, sonarqube, markdown, github-actions-logging),
-
+large_tuple:
+    warning: 3
