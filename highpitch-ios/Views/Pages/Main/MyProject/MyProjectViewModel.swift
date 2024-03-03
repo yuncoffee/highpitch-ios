@@ -10,9 +10,11 @@ import RxSwift
 import RxCocoa
 
 final class MyProjectViewModel: ViewModelType {
+    let projects = BehaviorRelay(value: [ProjectModel]())
+    let sections = BehaviorRelay(value: [SectionOfProjectModel]())
+    let navigationTo = PublishRelay<Void>()
     
     let disposeBag = DisposeBag()
-    let projects = BehaviorRelay(value: [ProjectModel]())
     
     struct Input {
         let click: ControlEvent<Void>

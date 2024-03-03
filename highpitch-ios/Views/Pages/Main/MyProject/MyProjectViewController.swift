@@ -9,10 +9,13 @@ import UIKit
 import SwiftUI
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 protocol MyProjectViewDelegate: AnyObject {
     func pushNavigation(to link: Links, with project: ProjectModel?)
 }
+
+typealias SectionOfProjectModel = SectionModel<String, ProjectModel>
 
 final class MyProjectViewController: UIViewController, MyProjectViewDelegate {
     // swiftlint: disable force_cast
@@ -24,6 +27,28 @@ final class MyProjectViewController: UIViewController, MyProjectViewDelegate {
     private let vm = MyProjectViewModel()
     private let disposeBag = DisposeBag()
 
+    let dataSource = RxCollectionViewSectionedReloadDataSource<SectionOfProjectModel>(
+        configureCell: { _, collectionView, indexPath, project in
+        let cell = collectionView
+                .dequeueReusableCell(withReuseIdentifier: ProjectCell.identifier,
+                                                      for: indexPath) as? ProjectCell
+        cell?.configure(project: project)
+        
+        return cell ?? UICollectionViewCell()
+        }, configureSupplementaryView: { dataSource, collectionview, title, indexPath in
+            let header = collectionview
+                .dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
+                                                  withReuseIdentifier: ProjectHeaderCell.identifier,
+                                                  for: indexPath) as? ProjectHeaderCell
+            let title = dataSource.sectionModels[indexPath.section].model
+            
+            header?.configure(title: title)
+
+            return header ?? UICollectionReusableView()
+        }
+    
+    )
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -32,20 +57,46 @@ final class MyProjectViewController: UIViewController, MyProjectViewDelegate {
     
     override func loadView() {
         view = MyProjectView()
-        // view가 로드된 이후에 데이터를 바인딩한다.
-        mainView.configure(with: MockModel.sampleProjects)
     }
     
-    // swiftlint: disable line_length
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    override func viewWillTransition(to size: CGSize, 
+                                     with coordinator: UIViewControllerTransitionCoordinator) {
         mainView.viewOrientationDidChange()
     }
-    // swiftlint: enable line_length
     
     private func setup() {
         mainView.delegate = self
+        vm.sections.accept([SectionOfProjectModel(model: "내 프로젝트", items: MockModel.sampleProjects)])
     }
- 
+
+    private func bind() {
+        bindFABView()
+        bindCollectionView()
+        let input = MyProjectViewModel.Input(click: mainView.fabView.rx.tap)
+        let output = vm.transform(input: input)
+    }
+    private func bindFABView() {
+        mainView.fabView.rx.tap
+            .subscribe { [weak self] _ in
+            self?.pushNavigation(to: .recording, with: nil)
+        }
+        .disposed(by: disposeBag)
+    }
+    
+    private func bindCollectionView() {
+        vm.sections
+            .bind(to: mainView.collectionView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+        
+        mainView.collectionView.rx.itemSelected
+            .subscribe { [weak self] indexPath in
+                guard let self = self, let indexPath = indexPath.element else { return }
+                self.pushNavigation(to: .projectDetail, 
+                                    with:  vm.sections.value[indexPath.section].items[indexPath.row])
+            }
+            .disposed(by: disposeBag)
+    }
+    
     func pushNavigation(to link: Links, with project: ProjectModel?) {
         var vc: UIViewController?
         switch link {
@@ -62,16 +113,6 @@ final class MyProjectViewController: UIViewController, MyProjectViewDelegate {
         if let vc = vc {
             navigationController?.pushViewController(vc, animated: true)
         }
-    }
-
-    func bind() {
-        let input = MyProjectViewModel.Input(click: mainView.headerView.rx.tap)
-        
-        let output = vm.transform(input: input)
-        
-        output.text
-            .drive(mainView.myLabel.rx.text)
-            .disposed(by: disposeBag)
     }
     
     deinit {

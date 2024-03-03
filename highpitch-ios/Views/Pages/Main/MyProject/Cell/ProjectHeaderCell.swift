@@ -30,6 +30,13 @@ class ProjectHeaderCell: UICollectionReusableView {
         addSubview(label)
     }
     
+    func configure(title: String) {
+        label.text = title
+        label.flex.markDirty()
+        
+        setNeedsLayout()
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         label.frame = bounds
