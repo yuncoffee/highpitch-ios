@@ -16,10 +16,10 @@ class RecordingViewController: UIViewController {
     }
     
     private func setup() {
-        view.backgroundColor = .yellow
-        navigationController?.navigationBar.prefersLargeTitles = true
+        view.backgroundColor = .white
         
         let button = makeButton(withText: "Navigation!")
+
         view.addSubview(button)
         
         NSLayoutConstraint.activate([
@@ -34,6 +34,7 @@ class RecordingViewController: UIViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(text, for: .normal)
+        button.setTitleColor(.black, for: .normal)
         
         return button
     }

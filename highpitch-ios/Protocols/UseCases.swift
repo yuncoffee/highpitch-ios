@@ -12,6 +12,7 @@ enum Links {
     case recording
     case searchProject
     case notification
+    case projectDetail
 }
 
 protocol ProjectUseCase {

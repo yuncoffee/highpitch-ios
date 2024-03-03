@@ -11,13 +11,12 @@ import RxSwift
 import RxCocoa
 
 protocol MyProjectViewDelegate: AnyObject {
-    func pushNavigation(with: ProjectModel)
+    func pushNavigation(to link: Links, with project: ProjectModel?)
 }
 
 final class MyProjectViewController: UIViewController, MyProjectViewDelegate {
-    
     // swiftlint: disable force_cast
-    fileprivate var mainView: MyProjectView {
+    private var mainView: MyProjectView {
         return self.view as! MyProjectView
     }
     // swiftlint: enable force_cast
@@ -46,13 +45,25 @@ final class MyProjectViewController: UIViewController, MyProjectViewDelegate {
     private func setup() {
         mainView.delegate = self
     }
-    
-    func pushNavigation(with project: ProjectModel) {
-        let projectVC = ProjectViewController()
-        projectVC.configure(with: project)
-        navigationController?.pushViewController(projectVC, animated: true)
+ 
+    func pushNavigation(to link: Links, with project: ProjectModel?) {
+        var vc: UIViewController?
+        switch link {
+        case .recording:
+            vc = RecordingViewController()
+        case .projectDetail:
+            vc = ProjectViewController()
+            if let vc = vc as? ProjectViewController, let project = project {
+                vc.configure(with: project)
+            }
+        default:
+            print("Invalid Link")
+        }
+        if let vc = vc {
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
-    
+
     func bind() {
         let input = MyProjectViewModel.Input(click: mainView.headerView.rx.tap)
         

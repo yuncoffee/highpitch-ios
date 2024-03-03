@@ -48,7 +48,7 @@ class MainTabBarViewController: UITabBarController {
         navigationItem.rightBarButtonItems = rightBarItems
     }
 
-    private func navigation(to link: Links) {
+    private func pushNavigation(to link: Links) {
         var vc: UIViewController?
         switch link {
         case .searchProject:
@@ -70,10 +70,10 @@ class MainTabBarViewController: UITabBarController {
         let mainSymbol = UIBarButtonItem(primaryAction: mainSymbolButtonAction)
         
         let searchButtonAction = UIAction(title: "search") { [weak self] _ in
-            self?.navigation(to: .searchProject)
+            self?.pushNavigation(to: .searchProject)
         }
         let notiButtonAction = UIAction(image: UIImage(systemName: "bell.fill")) { [weak self] _ in
-            self?.navigation(to: .notification)
+            self?.pushNavigation(to: .notification)
         }
         /// rightBarItem
         let searchButton = UIBarButtonItem(systemItem: .search, primaryAction: searchButtonAction)

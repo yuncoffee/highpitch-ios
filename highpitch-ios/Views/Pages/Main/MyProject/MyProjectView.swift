@@ -61,8 +61,9 @@ final class MyProjectView: UIView {
             flex.addItem(label2).marginTop(16)
         }
 
+        headerView.addTarget(self, action: #selector(headerAction), for: .touchUpInside)
         headerView.flex.cornerRadius(32).backgroundColor(.blue).width(64).height(64)
-        
+
         addSubview(myLabel)
         addSubview(rootContainerView)
         addSubview(collectionView)
@@ -83,6 +84,9 @@ final class MyProjectView: UIView {
         
         headerView.pin.bottom(24).right(16).width(64).height(64).margin(pin.safeArea)
         
+    }
+    @objc private func headerAction() {
+        delegate?.pushNavigation(to: .recording, with: nil)
     }
 }
 
@@ -130,7 +134,7 @@ extension MyProjectView: UICollectionViewDelegateFlowLayout, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.pushNavigation(with: projects[indexPath.row])
+        delegate?.pushNavigation(to: .projectDetail, with: projects[indexPath.row])
     }
 }
 // swiftlint: enable line_length
