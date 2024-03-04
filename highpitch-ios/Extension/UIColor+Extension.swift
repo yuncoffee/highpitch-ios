@@ -13,6 +13,7 @@ extension UIColor {
     static let text = UIColor(hex: "#000000")
     static let point = UIColor(hex: "#3A3241")
     static let recordDot = UIColor(hex: "#FF0000")
+    static let stroke = UIColor(hex: "#000000", alpha: 0.08)
     
     struct PrimaryScale {
         static let primary = PrimaryScale.primary500

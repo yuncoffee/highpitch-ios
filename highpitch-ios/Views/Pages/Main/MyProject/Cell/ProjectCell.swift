@@ -36,10 +36,10 @@ class ProjectCell: UICollectionViewCell {
         dateLabel.font = .pretendard(.body, weight: .medium)
         
         contentView.flex.paddingHorizontal(24).gap(8).define { flex in
-            flex.addItem(titleLabel)
+            flex.addItem(titleLabel).marginTop(12)
             flex.addItem(descriptionLabel)
             flex.addItem(dateLabel).marginBottom(4)
-            flex.addItem().height(1).backgroundColor(.lightGray).marginBottom(12)
+            flex.addItem().height(1).backgroundColor(.stroke)
         }
         
     }

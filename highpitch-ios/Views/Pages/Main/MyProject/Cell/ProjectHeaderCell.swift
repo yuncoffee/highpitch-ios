@@ -16,7 +16,7 @@ class ProjectHeaderCell: UICollectionReusableView {
     private let rootView = UIView()
     private let label = UILabel()
     private let blurView = UIVisualEffectView()
-    private var height = 80.0
+    private var height = 56.0
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -36,7 +36,7 @@ class ProjectHeaderCell: UICollectionReusableView {
         
         label.font = .pretendard(.title2, weight: .semiBold)
 
-        rootView.flex.padding(28, 24).define { flex in
+        rootView.flex.padding(16, 24, 16).define { flex in
             flex.addItem(label)
         }
         
