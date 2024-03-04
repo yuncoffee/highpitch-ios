@@ -14,10 +14,47 @@ extension UIFont {
     }
 
     struct Pretendard {
-        static let body = UIFont(name: PretendardFont.bold.rawValue, size: 14)
-        
+        struct LargeTitle {
+            
+        }
+        struct Title1 {
+            static let bold = UIFont(name: PretendardFont.bold.rawValue, size: 24)
+            static let medium = UIFont(name: PretendardFont.medium.rawValue, size: 24)
+        } // 24
+        struct Title2 {
+            static let bold = UIFont(name: PretendardFont.bold.rawValue, size: 20)
+            static let semibold = UIFont(name: PretendardFont.semiBold.rawValue, size: 20)
+        }// 20
+        struct Title3 {
+            static let semibold = UIFont(name: PretendardFont.semiBold.rawValue, size: 18)
+        }// 18
+        struct Headline {
+            static let bold = UIFont(name: PretendardFont.bold.rawValue, size: 16)
+            static let semibold = UIFont(name: PretendardFont.semiBold.rawValue, size: 16)
+            static let medium = UIFont(name: PretendardFont.medium.rawValue, size: 16)
+        } // 16
+        struct Body {
+            static let meiudm = UIFont(name: PretendardFont.medium.rawValue, size: 14)
+            static let regular = UIFont(name: PretendardFont.regular.rawValue, size: 14)
+        } // 14
+//        struct Callout {}
+//        struct SubHead {}
+        struct Footnote {
+            
+        } // 13
+        struct Caption1 {
+            static let bold = UIFont(name: PretendardFont.bold.rawValue, size: 12)
+            static let semibold = UIFont(name: PretendardFont.semiBold.rawValue, size: 12)
+            static let regular = UIFont(name: PretendardFont.regular.rawValue, size: 12)
+        } // 12
+        struct Caption2 {
+            
+        } // 10
+                
         static func registerFonts() {
-            PretendardFont.allCases.forEach { registerFont(bundle: .main, fontName: $0.rawValue, fontExtension: "otf") }
+            PretendardFont.allCases.forEach { registerFont(bundle: .main, 
+                                                           fontName: $0.rawValue,
+                                                           fontExtension: "otf") }
         }
     }
 }

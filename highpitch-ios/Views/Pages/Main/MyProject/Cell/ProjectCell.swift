@@ -31,11 +31,8 @@ class ProjectCell: UICollectionViewCell {
         descriptionLabel.text = "Description"
         dateLabel.text = "Date * Time * Duration"
         
-        
-        titleLabel.font = .systemFont(ofSize: 16, weight: .semibold)
-        descriptionLabel.font = .systemFont(ofSize: 14, weight: .medium)
-//        titleLabel.font = .pretendard(name: .semiBold, size: 16)
-//        descriptionLabel.font = .pretendard(name: .medium, size: 14)
+        titleLabel.font = .pretendard(name: .semiBold, size: 16)
+        descriptionLabel.font = .pretendard(name: .medium, size: 14)
         
         contentView.flex.define { flex in
             flex.addItem(titleLabel)
@@ -68,7 +65,7 @@ extension ProjectCell {
         titleLabel.text = project.name
         titleLabel.flex.markDirty()
         
-        descriptionLabel.text = "\(project.practices.count) 개의 연습이 있습니다.abcdefghijklmnopqrstuvw"
+        descriptionLabel.text = "\(project.practices.count) 개의 연습이 있어요."
         descriptionLabel.flex.markDirty()
         
         dateLabel.text = project.creatAt.description
@@ -80,8 +77,12 @@ extension ProjectCell {
 
 struct ProjectCell_Preview: PreviewProvider {
     static var previews: some View {
+        let cell = ProjectCell()
+        let projectModel = ProjectModel(name: "Hello", creatAt: Date(), editAt: Date())
+        
         ViewPreview {
-            ProjectCell()
+            cell.configure(project: projectModel)
+            return cell
         }
     }
 }

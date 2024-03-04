@@ -48,5 +48,3 @@ protocol UserUseCase {
     func updateProfile(image: URL)
     func updatePassword(password: String)
 }
-
-// protocol
