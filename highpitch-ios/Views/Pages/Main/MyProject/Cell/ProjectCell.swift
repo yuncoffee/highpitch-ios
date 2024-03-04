@@ -31,14 +31,15 @@ class ProjectCell: UICollectionViewCell {
         descriptionLabel.text = "Description"
         dateLabel.text = "Date * Time * Duration"
         
-        titleLabel.font = .pretendard(name: .semiBold, size: 16)
-        descriptionLabel.font = .pretendard(name: .medium, size: 14)
+        titleLabel.font = .pretendard(.headline, weight: .semiBold)
+        descriptionLabel.font = .pretendard(.body, weight: .medium)
+        dateLabel.font = .pretendard(.body, weight: .medium)
         
-        contentView.flex.define { flex in
+        contentView.flex.paddingHorizontal(24).gap(8).define { flex in
             flex.addItem(titleLabel)
             flex.addItem(descriptionLabel)
-            flex.addItem(dateLabel)
-            flex.addItem().height(1).backgroundColor(.lightGray)
+            flex.addItem(dateLabel).marginBottom(4)
+            flex.addItem().height(1).backgroundColor(.lightGray).marginBottom(12)
         }
         
     }
@@ -68,7 +69,7 @@ extension ProjectCell {
         descriptionLabel.text = "\(project.practices.count) 개의 연습이 있어요."
         descriptionLabel.flex.markDirty()
         
-        dateLabel.text = project.creatAt.description
+        dateLabel.text = Date.createAtToHMS(input: project.creatAt.description) + " · 12분"
         dateLabel.flex.markDirty()
         
         setNeedsLayout()
@@ -78,7 +79,7 @@ extension ProjectCell {
 struct ProjectCell_Preview: PreviewProvider {
     static var previews: some View {
         let cell = ProjectCell()
-        let projectModel = ProjectModel(name: "Hello", creatAt: Date(), editAt: Date())
+        let projectModel = ProjectModel(name: "프로젝트 명", creatAt: Date(), editAt: Date())
         
         ViewPreview {
             cell.configure(project: projectModel)

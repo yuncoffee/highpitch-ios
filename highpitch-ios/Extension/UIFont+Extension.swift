@@ -12,11 +12,13 @@ extension UIFont {
     static func pretendard(name: PretendardFont, size: CGFloat) -> UIFont {
         UIFont(name: name.rawValue, size: size) ?? .preferredFont(forTextStyle: .body)
     }
-
+    
+    static func pretendard(_ scale: PretendardScale, weight: PretendardFont) -> UIFont {
+        UIFont(name: weight.rawValue, size: scale.rawValue) ?? .preferredFont(forTextStyle: .body)
+    }
+    
     struct Pretendard {
-        struct LargeTitle {
-            
-        }
+        struct LargeTitle {}
         struct Title1 {
             static let bold = UIFont(name: PretendardFont.bold.rawValue, size: 24)
             static let medium = UIFont(name: PretendardFont.medium.rawValue, size: 24)
@@ -39,18 +41,14 @@ extension UIFont {
         } // 14
 //        struct Callout {}
 //        struct SubHead {}
-        struct Footnote {
-            
-        } // 13
+        struct Footnote {} // 13
         struct Caption1 {
             static let bold = UIFont(name: PretendardFont.bold.rawValue, size: 12)
             static let semibold = UIFont(name: PretendardFont.semiBold.rawValue, size: 12)
             static let regular = UIFont(name: PretendardFont.regular.rawValue, size: 12)
         } // 12
-        struct Caption2 {
-            
-        } // 10
-                
+        struct Caption2 {} // 10
+        
         static func registerFonts() {
             PretendardFont.allCases.forEach { registerFont(bundle: .main, 
                                                            fontName: $0.rawValue,
@@ -76,4 +74,16 @@ enum PretendardFont: String, CaseIterable {
     case medium = "Pretendard-Medium"
     case light = "Pretendard-Light"
     case semiBold = "Pretendard-SemiBold"
+}
+
+enum PretendardScale: CGFloat, CaseIterable {
+    case largeTitle = 32
+    case title1 = 24
+    case title2 = 20
+    case title3 = 18
+    case headline = 16
+    case body = 14
+    case footnote = 13
+    case caption1 = 12
+    case caption2 = 11
 }

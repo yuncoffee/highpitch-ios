@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200730F32B9559FB00157E1C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200730F22B9559FB00157E1C /* Date+Extension.swift */; };
 		20119F642B94009D0014568A /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20119F632B94009D0014568A /* NotificationViewController.swift */; };
 		20119F672B9400CF0014568A /* SearchProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20119F662B9400CF0014568A /* SearchProjectViewController.swift */; };
 		20119F692B9409B60014568A /* MyPracticeAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20119F682B9409B60014568A /* MyPracticeAnalysisViewController.swift */; };
@@ -83,6 +84,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		200730F22B9559FB00157E1C /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		20119F632B94009D0014568A /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		20119F662B9400CF0014568A /* SearchProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProjectViewController.swift; sourceTree = "<group>"; };
 		20119F682B9409B60014568A /* MyPracticeAnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPracticeAnalysisViewController.swift; sourceTree = "<group>"; };
@@ -398,10 +400,11 @@
 			isa = PBXGroup;
 			children = (
 				20970E1E2B8729CB00690459 /* Preview+Extension.swift */,
+				20F545652B8DB3AC004B8462 /* Type+Extension.swift */,
 				20F5455C2B8D717D004B8462 /* UIImage+Extension.swift */,
 				20F5455E2B8D73AE004B8462 /* UIColor+Extension.swift */,
-				20F545652B8DB3AC004B8462 /* Type+Extension.swift */,
 				20119F6A2B946C250014568A /* UIFont+Extension.swift */,
+				200730F22B9559FB00157E1C /* Date+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -656,6 +659,7 @@
 				20970DFE2B85D1F400690459 /* RecordingViewController.swift in Sources */,
 				203EB05D2B8CA0A500FCEF52 /* PracticeDetailViewController.swift in Sources */,
 				20970E042B85D24100690459 /* SignInViewController.swift in Sources */,
+				200730F32B9559FB00157E1C /* Date+Extension.swift in Sources */,
 				20970D5D2B84D62700690459 /* SceneDelegate.swift in Sources */,
 				20119F672B9400CF0014568A /* SearchProjectViewController.swift in Sources */,
 				20970DF02B85CC2500690459 /* OnboardingViewController.swift in Sources */,
