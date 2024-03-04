@@ -56,7 +56,7 @@ final class MyProjectView: UIView {
     private func settingFabButton() {
         let size = 64.0
         let cornerRadius = size / 2
-        let color: UIColor = .point
+        let color: UIColor = UIColor.GrayScale.black
         
         let image = UIImage(systemName: "mic.fill")?
             .resizeImage(size: .init(width: 18, height: 28))
@@ -93,7 +93,7 @@ extension MyProjectView: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        .init(width: collectionView.bounds.width, height: 40)
+        .init(width: collectionView.bounds.width, height: headerCellTemplate.getHeight())
     }
 }
 // swiftlint: enable line_length

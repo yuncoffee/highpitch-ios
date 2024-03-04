@@ -7,14 +7,16 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 import FlexLayout
 import PinLayout
 
 class ProjectHeaderCell: UICollectionReusableView {
     static let identifier = "ProjectHeaderCell"
-    
-    fileprivate let label = UILabel()
-    
+    private let rootView = UIView()
+    private let label = UILabel()
+    private let blurView = UIVisualEffectView()
+    private var height = 80.0
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -25,20 +27,47 @@ class ProjectHeaderCell: UICollectionReusableView {
     }
     
     func setup() {
+        let blurEffect = UIBlurEffect(style: .light)
+        let vibrancyView = UIVisualEffectView(effect: UIVibrancyEffect(blurEffect: blurEffect))
+        
+        blurView.effect = blurEffect
+        
         label.text = "HELLO"
-        backgroundColor = .green
-        addSubview(label)
+        
+        label.font = .pretendard(.title2, weight: .semiBold)
+
+        rootView.flex.padding(28, 24).define { flex in
+            flex.addItem(label)
+        }
+        
+        addSubview(blurView)
+        blurView.contentView.addSubview(vibrancyView)
+        
+        addSubview(rootView)
     }
     
     func configure(title: String) {
         label.text = title
         label.flex.markDirty()
-        
         setNeedsLayout()
+    }
+    
+    func getHeight() -> CGFloat {
+        height
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        label.frame = bounds
+        blurView.pin.all()
+        rootView.pin.all()
+        rootView.flex.layout(mode: .adjustHeight)
+    }
+}
+
+struct ProjectHeaderCell_Preview: PreviewProvider {
+    static var previews: some View {
+        ViewPreview {
+            ProjectHeaderCell()
+        }
     }
 }

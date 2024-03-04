@@ -14,7 +14,7 @@ extension Date {
         
         if let date = inputFormatter.date(from: input) {
             let outputFormatter = DateFormatter()
-            outputFormatter.dateFormat = "yyyy.MM.dd · HH:mm"
+            outputFormatter.dateFormat = "yyyy.MM.dd • HH:mm"
             
             let dateString = outputFormatter.string(from: date)
             

@@ -83,7 +83,7 @@ final class MainTabBarViewController: UITabBarController {
         searchButton.tintColor = .point
         notiButton.tintColor = .point
         
-        return (mainSymbol, [searchButton, notiButton])
+        return (mainSymbol, [notiButton, searchButton])
     }
 }
 
