@@ -69,6 +69,7 @@ identifier_name:
     - epm
     - hex
     - to
+    - gap
   allowed_symbols: ["_"]
 opt_in_rules:
   - missing_docs

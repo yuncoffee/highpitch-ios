@@ -10,8 +10,8 @@ import UIKit
 
 class PracticeDetailViewController: UIViewController {
     // swiftlint: disable force_cast
-    fileprivate var mainView: PracticeView {
-        return self.view as! PracticeView
+    fileprivate var mainView: PracticeDetailView {
+        return self.view as! PracticeDetailView
     }
     // swiftlint: enable force_cast
     
@@ -28,7 +28,7 @@ class PracticeDetailViewController: UIViewController {
     
     override func loadView() {
         if let practice = practice {
-            view = PracticeView(practice: practice)
+            view = PracticeDetailView(practice: practice)
         }
     }
     

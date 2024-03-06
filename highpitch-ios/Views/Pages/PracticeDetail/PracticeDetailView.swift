@@ -11,7 +11,7 @@ import SwiftUI
 import PinLayout
 import FlexLayout
 
-final class PracticeView: UIView {
+final class PracticeDetailView: UIView {
     fileprivate let titleLabel = UILabel()
     
     var practice: PracticeModel
@@ -38,7 +38,7 @@ final class PracticeView: UIView {
     }
 }
 
-extension PracticeView {
+extension PracticeDetailView {
     func configure(with practice: PracticeModel) {
         self.practice = practice
     }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		200730F32B9559FB00157E1C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200730F22B9559FB00157E1C /* Date+Extension.swift */; };
+		200730F52B970E0500157E1C /* ProjectDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200730F42B970E0500157E1C /* ProjectDetailViewModel.swift */; };
 		20119F642B94009D0014568A /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20119F632B94009D0014568A /* NotificationViewController.swift */; };
 		20119F672B9400CF0014568A /* SearchProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20119F662B9400CF0014568A /* SearchProjectViewController.swift */; };
 		20119F692B9409B60014568A /* MyPracticeAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20119F682B9409B60014568A /* MyPracticeAnalysisViewController.swift */; };
@@ -27,8 +28,8 @@
 		204DF4BD2B8C460D0067170C /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4BC2B8C460D0067170C /* ProjectCell.swift */; };
 		204DF4BF2B8C54200067170C /* MockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4BE2B8C54200067170C /* MockModel.swift */; };
 		204DF4C22B8C5BE40067170C /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4C12B8C5BE40067170C /* ProjectDetailViewController.swift */; };
-		204DF4C42B8C643B0067170C /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4C32B8C643B0067170C /* ProjectView.swift */; };
-		204DF4C72B8C8F260067170C /* PracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4C62B8C8F260067170C /* PracticeView.swift */; };
+		204DF4C42B8C643B0067170C /* ProjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4C32B8C643B0067170C /* ProjectDetailView.swift */; };
+		204DF4C72B8C8F260067170C /* PracticeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4C62B8C8F260067170C /* PracticeDetailView.swift */; };
 		204DF4CB2B8C8FE90067170C /* PracticesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4CA2B8C8FE90067170C /* PracticesView.swift */; };
 		204DF4CE2B8C90620067170C /* PracticeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4CD2B8C90620067170C /* PracticeCell.swift */; };
 		20970D5B2B84D62700690459 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970D5A2B84D62700690459 /* AppDelegate.swift */; };
@@ -54,8 +55,11 @@
 		20970E1D2B87282300690459 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 20970E1C2B87282300690459 /* PinLayout */; };
 		20970E1F2B8729CB00690459 /* Preview+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E1E2B8729CB00690459 /* Preview+Extension.swift */; };
 		20970E222B8730BD00690459 /* MyProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E212B8730BD00690459 /* MyProjectView.swift */; };
+		209CF8842B9884960046936A /* SegmentedControlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209CF8832B9884960046936A /* SegmentedControlFactory.swift */; };
+		209CF8862B9889310046936A /* HPSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209CF8852B9889310046936A /* HPSegmentedControl.swift */; };
 		20E352A52B9334F000180508 /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E352A42B9334F000180508 /* ProjectService.swift */; };
 		20E352A82B933E9700180508 /* UseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E352A72B933E9700180508 /* UseCases.swift */; };
+		20F1E8172B984C9C0086522D /* ProjectDetailSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F1E8162B984C9C0086522D /* ProjectDetailSummaryView.swift */; };
 		20F545572B8D6DFE004B8462 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 20F545562B8D6DFE004B8462 /* RxCocoa */; };
 		20F545592B8D6DFE004B8462 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 20F545582B8D6DFE004B8462 /* RxRelay */; };
 		20F5455B2B8D6DFE004B8462 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 20F5455A2B8D6DFE004B8462 /* RxSwift */; };
@@ -85,6 +89,7 @@
 
 /* Begin PBXFileReference section */
 		200730F22B9559FB00157E1C /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		200730F42B970E0500157E1C /* ProjectDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewModel.swift; sourceTree = "<group>"; };
 		20119F632B94009D0014568A /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		20119F662B9400CF0014568A /* SearchProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProjectViewController.swift; sourceTree = "<group>"; };
 		20119F682B9409B60014568A /* MyPracticeAnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPracticeAnalysisViewController.swift; sourceTree = "<group>"; };
@@ -102,8 +107,8 @@
 		204DF4BC2B8C460D0067170C /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
 		204DF4BE2B8C54200067170C /* MockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModel.swift; sourceTree = "<group>"; };
 		204DF4C12B8C5BE40067170C /* ProjectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewController.swift; sourceTree = "<group>"; };
-		204DF4C32B8C643B0067170C /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
-		204DF4C62B8C8F260067170C /* PracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeView.swift; sourceTree = "<group>"; };
+		204DF4C32B8C643B0067170C /* ProjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailView.swift; sourceTree = "<group>"; };
+		204DF4C62B8C8F260067170C /* PracticeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeDetailView.swift; sourceTree = "<group>"; };
 		204DF4CA2B8C8FE90067170C /* PracticesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticesView.swift; sourceTree = "<group>"; };
 		204DF4CD2B8C90620067170C /* PracticeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeCell.swift; sourceTree = "<group>"; };
 		20970D572B84D62700690459 /* highpitch-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "highpitch-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,8 +136,11 @@
 		20970E162B8724EB00690459 /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
 		20970E1E2B8729CB00690459 /* Preview+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+Extension.swift"; sourceTree = "<group>"; };
 		20970E212B8730BD00690459 /* MyProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectView.swift; sourceTree = "<group>"; };
+		209CF8832B9884960046936A /* SegmentedControlFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlFactory.swift; sourceTree = "<group>"; };
+		209CF8852B9889310046936A /* HPSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPSegmentedControl.swift; sourceTree = "<group>"; };
 		20E352A42B9334F000180508 /* ProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectService.swift; sourceTree = "<group>"; };
 		20E352A72B933E9700180508 /* UseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCases.swift; sourceTree = "<group>"; };
+		20F1E8162B984C9C0086522D /* ProjectDetailSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailSummaryView.swift; sourceTree = "<group>"; };
 		20F5455C2B8D717D004B8462 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		20F5455E2B8D73AE004B8462 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		20F545612B8DABF9004B8462 /* ProjectHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHeaderCell.swift; sourceTree = "<group>"; };
@@ -191,6 +199,7 @@
 		20119F602B9400080014568A /* Summary */ = {
 			isa = PBXGroup;
 			children = (
+				20F1E8162B984C9C0086522D /* ProjectDetailSummaryView.swift */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -238,10 +247,11 @@
 		204DF4C02B8C5BB30067170C /* ProjectDetail */ = {
 			isa = PBXGroup;
 			children = (
+				204DF4C12B8C5BE40067170C /* ProjectDetailViewController.swift */,
+				200730F42B970E0500157E1C /* ProjectDetailViewModel.swift */,
+				204DF4C32B8C643B0067170C /* ProjectDetailView.swift */,
 				20119F602B9400080014568A /* Summary */,
 				204DF4CC2B8C90410067170C /* PracticeList */,
-				204DF4C12B8C5BE40067170C /* ProjectDetailViewController.swift */,
-				204DF4C32B8C643B0067170C /* ProjectView.swift */,
 			);
 			path = ProjectDetail;
 			sourceTree = "<group>";
@@ -250,7 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				203EB05C2B8CA0A500FCEF52 /* PracticeDetailViewController.swift */,
-				204DF4C62B8C8F260067170C /* PracticeView.swift */,
+				204DF4C62B8C8F260067170C /* PracticeDetailView.swift */,
 			);
 			path = PracticeDetail;
 			sourceTree = "<group>";
@@ -362,6 +372,8 @@
 			isa = PBXGroup;
 			children = (
 				20970E162B8724EB00690459 /* LabelFactory.swift */,
+				209CF8832B9884960046936A /* SegmentedControlFactory.swift */,
+				209CF8852B9889310046936A /* HPSegmentedControl.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -399,8 +411,8 @@
 		20970E092B85E27300690459 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				20970E1E2B8729CB00690459 /* Preview+Extension.swift */,
 				20F545652B8DB3AC004B8462 /* Type+Extension.swift */,
+				20970E1E2B8729CB00690459 /* Preview+Extension.swift */,
 				20F5455C2B8D717D004B8462 /* UIImage+Extension.swift */,
 				20F5455E2B8D73AE004B8462 /* UIColor+Extension.swift */,
 				20119F6A2B946C250014568A /* UIFont+Extension.swift */,
@@ -646,7 +658,8 @@
 				204DF4BD2B8C460D0067170C /* ProjectCell.swift in Sources */,
 				20119F6B2B946C250014568A /* UIFont+Extension.swift in Sources */,
 				20F545662B8DB3AC004B8462 /* Type+Extension.swift in Sources */,
-				204DF4C42B8C643B0067170C /* ProjectView.swift in Sources */,
+				204DF4C42B8C643B0067170C /* ProjectDetailView.swift in Sources */,
+				209CF8842B9884960046936A /* SegmentedControlFactory.swift in Sources */,
 				20F545642B8DB2D7004B8462 /* MyProjectViewModel.swift in Sources */,
 				20F5455F2B8D73AE004B8462 /* UIColor+Extension.swift in Sources */,
 				204DF4CB2B8C8FE90067170C /* PracticesView.swift in Sources */,
@@ -655,10 +668,12 @@
 				20970E022B85D21900690459 /* MyProjectViewController.swift in Sources */,
 				20970E062B85D24800690459 /* SignUpViewController.swift in Sources */,
 				20970E122B871E3400690459 /* UserModel.swift in Sources */,
-				204DF4C72B8C8F260067170C /* PracticeView.swift in Sources */,
+				204DF4C72B8C8F260067170C /* PracticeDetailView.swift in Sources */,
 				20970DFE2B85D1F400690459 /* RecordingViewController.swift in Sources */,
 				203EB05D2B8CA0A500FCEF52 /* PracticeDetailViewController.swift in Sources */,
 				20970E042B85D24100690459 /* SignInViewController.swift in Sources */,
+				200730F52B970E0500157E1C /* ProjectDetailViewModel.swift in Sources */,
+				20F1E8172B984C9C0086522D /* ProjectDetailSummaryView.swift in Sources */,
 				200730F32B9559FB00157E1C /* Date+Extension.swift in Sources */,
 				20970D5D2B84D62700690459 /* SceneDelegate.swift in Sources */,
 				20119F672B9400CF0014568A /* SearchProjectViewController.swift in Sources */,
@@ -669,6 +684,7 @@
 				20970E172B8724EB00690459 /* LabelFactory.swift in Sources */,
 				20119F642B94009D0014568A /* NotificationViewController.swift in Sources */,
 				20970E0E2B871E1100690459 /* ProjectModel.swift in Sources */,
+				209CF8862B9889310046936A /* HPSegmentedControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

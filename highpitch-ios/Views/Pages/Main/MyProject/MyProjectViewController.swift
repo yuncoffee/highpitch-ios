@@ -26,7 +26,7 @@ final class MyProjectViewController: UIViewController, MyProjectViewDelegate {
     
     private let vm = MyProjectViewModel()
     private let disposeBag = DisposeBag()
-
+    
     let dataSource = RxCollectionViewSectionedReloadDataSource<SectionOfProjectModel>(
         configureCell: { _, collectionView, indexPath, project in
         let cell = collectionView

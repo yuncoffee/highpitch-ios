@@ -25,7 +25,13 @@ struct MockModel {
             PracticeModel(name: "Practice 12", creatAt: Date(), analysis: PracticeAnalysis(), media: PracticeMedia(type: .audio)),
             PracticeModel(name: "Practice 13", creatAt: Date(), analysis: PracticeAnalysis(), media: PracticeMedia(type: .audio)),
             PracticeModel(name: "Practice 14", creatAt: Date(), analysis: PracticeAnalysis(), media: PracticeMedia(type: .audio)),
-            PracticeModel(name: "Practice 15", creatAt: Date(), analysis: PracticeAnalysis(), media: PracticeMedia(type: .audio))
+            PracticeModel(name: "Practice 15", creatAt: Date(), analysis: PracticeAnalysis(), media: PracticeMedia(type: .audio)),
+            PracticeModel(name: "Practice 16", creatAt: Date(), analysis: PracticeAnalysis(), media: PracticeMedia(type: .audio)),
+            PracticeModel(name: "Practice 17", creatAt: Date(), analysis: PracticeAnalysis(), media: PracticeMedia(type: .audio)),
+            PracticeModel(name: "Practice 18", creatAt: Date(), analysis: PracticeAnalysis(), media: PracticeMedia(type: .audio)),
+            PracticeModel(name: "Practice 19", creatAt: Date(), analysis: PracticeAnalysis(), media: PracticeMedia(type: .audio)),
+            PracticeModel(name: "Practice 20", creatAt: Date(), analysis: PracticeAnalysis(), media: PracticeMedia(type: .audio)),
+            PracticeModel(name: "Practice 21", creatAt: Date(), analysis: PracticeAnalysis(), media: PracticeMedia(type: .audio))
         ]),
         ProjectModel(name: "Sample 2", creatAt: Date(), editAt: Date()),
         ProjectModel(name: "Sample 3", creatAt: Date(), editAt: Date(), practices: [
