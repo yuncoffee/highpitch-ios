@@ -8,18 +8,17 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import UIKit
 
 final class ProjectDetailViewModel: ViewModelType {
     var project: ProjectModel?
-    var currentTab: ProjectDetailViewTabs = .practices {
-        didSet {
-            print(currentTab)
-        }
-    }
+    let sections = BehaviorRelay(value: [SectionOfPracticeModel]())
+    let currentTabRelay = BehaviorRelay(value: ProjectDetailViewTabs.practices)
     let disposeBag = DisposeBag()
 
     struct Input {
         let segmentedControlTap: ControlEvent<Void>
+        let selectedSegmentedControl: ControlProperty<Int>
     }
     
     struct Output {
@@ -27,11 +26,16 @@ final class ProjectDetailViewModel: ViewModelType {
     }
     
     func transform(input: Input) -> Output {
-        Output(segmentedControlTap: input.segmentedControlTap)
+        input.selectedSegmentedControl
+            .map {ProjectDetailViewTabs(rawValue: $0)!}
+            .bind(to: currentTabRelay)
+            .disposed(by: disposeBag)
+        
+        return Output(segmentedControlTap: input.segmentedControlTap)
     }
 }
 
-enum ProjectDetailViewTabs {
+enum ProjectDetailViewTabs: Int {
     case summary
     case practices
 }

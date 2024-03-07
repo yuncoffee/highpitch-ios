@@ -13,18 +13,15 @@ import FlexLayout
 import RxSwift
 import RxCocoa
 
-final class PracticesView: UIView, UIScrollViewDelegate {
-    private let collectionView: UICollectionView
+final class PracticeListView: UIView, UIScrollViewDelegate {
+    let collectionView: UICollectionView
     private let flowLayout = UICollectionViewFlowLayout()
     private let cellTemplate = PracticeCell()
-    private var dataSource = Observable.of([PracticeModel]())
-    private let disposeBag = DisposeBag()
     
     weak var delegate: ProjectViewDelegate?
     
     init() {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        
         super.init(frame: .zero)
         
         flowLayout.minimumLineSpacing = 0
@@ -46,32 +43,14 @@ final class PracticesView: UIView, UIScrollViewDelegate {
     }
 }
 
-extension PracticesView {
-    func configure(with practices: [PracticeModel]) {
-        dataSource = Observable.of(practices)
-        
-        dataSource.bind(to: collectionView.rx.items(
-                cellIdentifier: PracticeCell.identifier,
-                cellType: PracticeCell.self)) { rowIndex, practice, cell in
-                    print(rowIndex)
-                    cell.configure(with: practice)
-                }
-                .disposed(by: disposeBag)
-        
-        collectionView.rx.modelSelected(PracticeModel.self)
-            .subscribe { practice in
-                self.delegate?.pushNavigation(with: practice)
-            }
-            .disposed(by: disposeBag)
-    }
-    
+extension PracticeListView {
     func viewOrientationDidChange() {
         flowLayout.invalidateLayout()
     }
 }
 
 // swiftlint: disable line_length
-extension PracticesView:  UICollectionViewDelegateFlowLayout {
+extension PracticeListView:  UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         cellTemplate.sizeThatFits(.init(width: collectionView.bounds.width, height: .greatestFiniteMagnitude))
     }
@@ -81,7 +60,7 @@ extension PracticesView:  UICollectionViewDelegateFlowLayout {
 struct PracticesView_Preview: PreviewProvider {
     static var previews: some View {
         ViewPreview {
-            PracticesView()
+            PracticeListView()
         }
     }
 }

@@ -16,23 +16,30 @@ class OnboardingViewController: UIViewController {
     
     private func setupUI() {
         view.addSubview(myView)
-        view.addSubview(myView2)
-//        myView.addSubview(myView2)
+//        view.addSubview(myView2)
+        myView.addSubview(myView2)
         view.addSubview(myLabel)
 
-        
-        
         NSLayoutConstraint.activate([
-            
-            myView.widthAnchor.constraint(lessThanOrEqualTo: view.widthAnchor, multiplier: 0.8),
-            myView.widthAnchor.constraint(equalToConstant: 200),
-            myView.heightAnchor.constraint(equalToConstant: 200),
+            myView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            myView.heightAnchor.constraint(equalTo: view.heightAnchor),
             myView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             myView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             
+            myView2.widthAnchor.constraint(equalToConstant: 200),
+            myView2.heightAnchor.constraint(equalToConstant: 200),
+            myView2.centerXAnchor.constraint(equalTo: myView.centerXAnchor),
+            myView2.centerYAnchor.constraint(equalTo: myView.centerYAnchor),
             
-            myView2.widthAnchor.constraint(equalToConstant: 100),
-            myView2.heightAnchor.constraint(equalToConstant: 100),
+//            myView.widthAnchor.constraint(lessThanOrEqualTo: view.widthAnchor, multiplier: 0.8),
+//            myView.widthAnchor.constraint(equalToConstant: 200),
+//            myView.heightAnchor.constraint(equalToConstant: 200),
+//            myView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            myView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+//            
+//            
+//            myView2.widthAnchor.constraint(equalToConstant: 100),
+//            myView2.heightAnchor.constraint(equalToConstant: 100),
 //            myView2.topAnchor.constraint(equalTo: myLabel.bottomAnchor),
 //            myView2.trailingAnchor.constraint(equalTo: myView.trailingAnchor, constant: 50),
             

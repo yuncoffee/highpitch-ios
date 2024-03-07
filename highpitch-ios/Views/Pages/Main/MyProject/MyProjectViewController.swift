@@ -64,7 +64,7 @@ final class MyProjectViewController: UIViewController, MyProjectViewDelegate {
         mainView.viewOrientationDidChange()
     }
     
-    private func setup() {
+    func setup() {
         mainView.delegate = self
         vm.sections.accept([
             SectionOfProjectModel(model: "내 프로젝트", items: MockModel.sampleProjects),
@@ -95,7 +95,7 @@ final class MyProjectViewController: UIViewController, MyProjectViewDelegate {
             .subscribe { [weak self] indexPath in
                 guard let self = self, let indexPath = indexPath.element else { return }
                 self.pushNavigation(to: .projectDetail, 
-                                    with:  vm.sections.value[indexPath.section].items[indexPath.row])
+                                    with: vm.sections.value[indexPath.section].items[indexPath.row])
             }
             .disposed(by: disposeBag)
     }

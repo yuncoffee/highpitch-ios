@@ -39,9 +39,10 @@ class HPSegmentedControl: UIView {
         let width = (UIScreen.main.bounds.width - marginSize * 2) / segmentIndex
         
         rootView.flex.define {
-            $0.addItem(segmentedControl).height(40).marginHorizontal(20)
+            $0.addItem(segmentedControl).height(40).marginHorizontal(20).marginBottom(3)
+            $0.addItem().height(0.5).backgroundColor(.stroke)
             $0.addItem(underLineView).position(.absolute).backgroundColor(UIColor.GrayScale.black)
-                .width(width).height(3).top(37).left(marginSize)
+                .width(width).height(3).top(41).left(marginSize)
         }
         segmentedControl.addAction(UIAction { [weak self] _ in
             self?.changeUnderLinePosition()
@@ -53,10 +54,15 @@ class HPSegmentedControl: UIView {
         rootView.pin.all()
         rootView.flex.layout(mode: .adjustHeight)
     }
+
+    func setSelectedSegmentIndex(_ index: Int) {
+        segmentedControl?.selectedSegmentIndex = index
+        changeUnderLinePosition()
+    }
     
     func addAction(_ completion: @escaping (_ selectedIndex: Int) -> Void) {
         guard let segmentedControl = segmentedControl else { return }
-        
+
         segmentedControl.addAction(UIAction { _ in
             completion(segmentedControl.selectedSegmentIndex)
         }, for: .valueChanged)

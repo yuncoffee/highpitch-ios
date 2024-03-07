@@ -30,7 +30,7 @@
 		204DF4C22B8C5BE40067170C /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4C12B8C5BE40067170C /* ProjectDetailViewController.swift */; };
 		204DF4C42B8C643B0067170C /* ProjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4C32B8C643B0067170C /* ProjectDetailView.swift */; };
 		204DF4C72B8C8F260067170C /* PracticeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4C62B8C8F260067170C /* PracticeDetailView.swift */; };
-		204DF4CB2B8C8FE90067170C /* PracticesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4CA2B8C8FE90067170C /* PracticesView.swift */; };
+		204DF4CB2B8C8FE90067170C /* PracticeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4CA2B8C8FE90067170C /* PracticeListView.swift */; };
 		204DF4CE2B8C90620067170C /* PracticeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4CD2B8C90620067170C /* PracticeCell.swift */; };
 		20970D5B2B84D62700690459 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970D5A2B84D62700690459 /* AppDelegate.swift */; };
 		20970D5D2B84D62700690459 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970D5C2B84D62700690459 /* SceneDelegate.swift */; };
@@ -109,7 +109,7 @@
 		204DF4C12B8C5BE40067170C /* ProjectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewController.swift; sourceTree = "<group>"; };
 		204DF4C32B8C643B0067170C /* ProjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailView.swift; sourceTree = "<group>"; };
 		204DF4C62B8C8F260067170C /* PracticeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeDetailView.swift; sourceTree = "<group>"; };
-		204DF4CA2B8C8FE90067170C /* PracticesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticesView.swift; sourceTree = "<group>"; };
+		204DF4CA2B8C8FE90067170C /* PracticeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeListView.swift; sourceTree = "<group>"; };
 		204DF4CD2B8C90620067170C /* PracticeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeCell.swift; sourceTree = "<group>"; };
 		20970D572B84D62700690459 /* highpitch-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "highpitch-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20970D5A2B84D62700690459 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -268,7 +268,7 @@
 		204DF4CC2B8C90410067170C /* PracticeList */ = {
 			isa = PBXGroup;
 			children = (
-				204DF4CA2B8C8FE90067170C /* PracticesView.swift */,
+				204DF4CA2B8C8FE90067170C /* PracticeListView.swift */,
 				204DF4CD2B8C90620067170C /* PracticeCell.swift */,
 			);
 			path = PracticeList;
@@ -662,7 +662,7 @@
 				209CF8842B9884960046936A /* SegmentedControlFactory.swift in Sources */,
 				20F545642B8DB2D7004B8462 /* MyProjectViewModel.swift in Sources */,
 				20F5455F2B8D73AE004B8462 /* UIColor+Extension.swift in Sources */,
-				204DF4CB2B8C8FE90067170C /* PracticesView.swift in Sources */,
+				204DF4CB2B8C8FE90067170C /* PracticeListView.swift in Sources */,
 				20970E1F2B8729CB00690459 /* Preview+Extension.swift in Sources */,
 				20E352A82B933E9700180508 /* UseCases.swift in Sources */,
 				20970E022B85D21900690459 /* MyProjectViewController.swift in Sources */,
