@@ -60,27 +60,23 @@ class ProjectDetailViewController: UIViewController, ProjectViewDelegate {
     }
     
     private func bind() {
-        inOutBind()
-        bindCollectionView()
-    }
-
-    private func inOutBind() {
         guard let segmentedControl = mainView.segmentedControl.segmentedControl else { return }
         
         let input = ProjectDetailViewModel.Input(
-            segmentedControlTap: segmentedControl.rx.controlEvent(.valueChanged),
             selectedSegmentedControl: segmentedControl.rx.selectedSegmentIndex
         )
         let output = vm.transform(input: input)
         
-        output.segmentedControlTap
+        output.selectedSegmentedControl
             .withUnretained(self)
-            .bind { vc, _ in
-                vc.mainView.layoutCell(selectedTab: vc.vm.currentTabRelay.value)
+            .bind { vc, selectedTab in
+                vc.mainView.layoutCell(selectedTab: selectedTab)
             }
             .disposed(by: disposeBag)
+        
+        bindCollectionView()
     }
-    
+
     private func bindCollectionView() {
         guard let dataSource = dataSource else { return }
         let collectionView = mainView.practiceListView.collectionView

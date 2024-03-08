@@ -16,12 +16,11 @@ final class ProjectDetailViewModel: ViewModelType {
     let disposeBag = DisposeBag()
     
     struct Input {
-        let segmentedControlTap: ControlEvent<Void>
         let selectedSegmentedControl: ControlProperty<Int>
     }
     
     struct Output {
-        let segmentedControlTap: ControlEvent<Void>
+        let selectedSegmentedControl: BehaviorRelay<ProjectDetailViewTabs>
     }
     
     func transform(input: Input) -> Output {
@@ -30,7 +29,7 @@ final class ProjectDetailViewModel: ViewModelType {
             .bind(to: currentTabRelay)
             .disposed(by: disposeBag)
         
-        return Output(segmentedControlTap: input.segmentedControlTap)
+        return Output(selectedSegmentedControl: currentTabRelay)
     }
 }
 
