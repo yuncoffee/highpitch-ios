@@ -45,12 +45,11 @@ final class MyProjectView: UIView {
         flowLayout.sectionHeadersPinToVisibleBounds  = true
         
         collectionView.delegate = self
+        collectionView.register(cellType: ProjectCell.self)
         collectionView.register(ProjectCell.self,
                                 forCellWithReuseIdentifier: ProjectCell.identifier)
-        collectionView.register(ProjectHeaderCell.self,
-                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                withReuseIdentifier: ProjectHeaderCell.identifier
-        )
+        collectionView.register(supplementaryViewType: ProjectHeaderCell.self,
+                                ofKind: UICollectionView.elementKindSectionHeader)
     }
     
     private func settingFabButton() {

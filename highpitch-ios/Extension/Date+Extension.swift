@@ -8,13 +8,28 @@
 import Foundation
 
 extension Date {
-    static func createAtToHMS(input: String) -> String {
+    static func formatCell(_ input: String) -> String {
         let inputFormatter = DateFormatter()
         inputFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZ"
         
         if let date = inputFormatter.date(from: input) {
             let outputFormatter = DateFormatter()
             outputFormatter.dateFormat = "yyyy.MM.dd • HH:mm"
+            
+            let dateString = outputFormatter.string(from: date)
+            
+            return dateString
+        } else {
+            return "Invalid Date"
+        }
+    }
+    static func formatDefault(_ input: String) -> String {
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZ"
+        
+        if let date = inputFormatter.date(from: input) {
+            let outputFormatter = DateFormatter()
+            outputFormatter.dateFormat = "yyyy.MM.dd"
             
             let dateString = outputFormatter.string(from: date)
             

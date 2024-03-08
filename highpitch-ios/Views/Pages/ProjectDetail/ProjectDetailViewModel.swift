@@ -12,7 +12,7 @@ import UIKit
 
 final class ProjectDetailViewModel: ViewModelType {
     let sections = BehaviorRelay(value: [SectionOfPracticeModel]())
-    let currentTabRelay = BehaviorRelay(value: ProjectDetailViewTabs.practices)
+    let currentTabRelay = BehaviorRelay(value: ProjectDetailViewTabs.summary)
     let disposeBag = DisposeBag()
     
     struct Input {

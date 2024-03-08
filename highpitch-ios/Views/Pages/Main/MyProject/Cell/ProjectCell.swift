@@ -70,7 +70,7 @@ extension ProjectCell {
         descriptionLabel.text = "\(project.practices.count) 개의 연습이 있어요."
         descriptionLabel.flex.markDirty()
         
-        dateLabel.text = Date.createAtToHMS(input: project.creatAt.description) + " • 12분"
+        dateLabel.text = Date.formatCell(project.creatAt.description) + " • 12분"
         dateLabel.flex.markDirty()
         
         setNeedsLayout()

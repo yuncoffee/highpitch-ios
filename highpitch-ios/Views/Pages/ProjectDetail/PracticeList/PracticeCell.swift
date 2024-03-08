@@ -84,7 +84,7 @@ final class PracticeCell: UICollectionViewCell, Reusable {
 extension PracticeCell {
     func configure(with practice: PracticeModel) {
         titleLabel.text = practice.name
-        descriptionLabel.text = Date.createAtToHMS(input: practice.creatAt.description) + " • 12분"
+        descriptionLabel.text = Date.formatCell(practice.creatAt.description) + " • 12분"
         
         let color = practice.isRemarkable ? UIColor.PrimaryScale.primary500 : UIColor.GrayScale.gray400
         let image = UIImage(systemName: practice.isRemarkable ?  "star.fill" : "star")?

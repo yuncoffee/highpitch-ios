@@ -59,6 +59,10 @@ extension ProjectDetailView {
         practiceListView.flex.markDirty()
         setNeedsLayout()
     }
+    
+    func configure(_ project: ProjectModel) {
+        projectDetailSummaryView.configure(project)
+    }
 }
 
 struct ProjectDetailView_Previews: PreviewProvider {

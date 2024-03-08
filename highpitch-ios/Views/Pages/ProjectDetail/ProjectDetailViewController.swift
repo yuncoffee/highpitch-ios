@@ -23,6 +23,7 @@ class ProjectDetailViewController: UIViewController, ProjectViewDelegate {
         return self.view as! ProjectDetailView
     }
     // swiftlint: enable force_cast
+    private let navigationTitle = UILabel()
     let buttonTapsObservable = BehaviorSubject<(IndexPath, PracticeModel)?>(value: nil)
     let vm = ProjectDetailViewModel()
     var dataSource: RxCollectionViewSectionedReloadDataSource<SectionOfPracticeModel>?
@@ -53,10 +54,9 @@ class ProjectDetailViewController: UIViewController, ProjectViewDelegate {
     }
     
     private func setupNavigationTitle() {
-        let label = UILabel()
-        label.text = "Project"
-        label.font = .pretendard(.title3, weight: .semiBold)
-        navigationItem.titleView = label
+        navigationTitle.text = "Project"
+        navigationTitle.font = .pretendard(.title3, weight: .semiBold)
+        navigationItem.titleView = navigationTitle
     }
     
     private func bind() {
@@ -134,6 +134,8 @@ class ProjectDetailViewController: UIViewController, ProjectViewDelegate {
 extension ProjectDetailViewController {
     func configure(with project: ProjectModel) {
         vm.sections.accept([SectionOfPracticeModel(model: "", items: project.practices)])
+        mainView.configure(project)
+        navigationTitle.text = project.name
     }
 }
 

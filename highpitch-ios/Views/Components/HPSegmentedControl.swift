@@ -19,6 +19,7 @@ class HPSegmentedControl: UIView {
     private let underLineView = UIView()
     private let gapSize = 20.0
     private let marginSize = 20.0
+    private var isInit = false
     
     init(items: [String]) {
         self.items = items
@@ -37,7 +38,6 @@ class HPSegmentedControl: UIView {
         guard let segmentedControl = segmentedControl else { return }
         let segmentIndex = CGFloat(segmentedControl.numberOfSegments)
         let width = (UIScreen.main.bounds.width - marginSize * 2) / segmentIndex
-        
         rootView.flex.define {
             $0.addItem(segmentedControl).height(40).marginHorizontal(20).marginBottom(3)
             $0.addItem().height(0.5).backgroundColor(.stroke)
@@ -58,6 +58,9 @@ class HPSegmentedControl: UIView {
     func setSelectedSegmentIndex(_ index: Int) {
         segmentedControl?.selectedSegmentIndex = index
         changeUnderLinePosition()
+        if !isInit {
+            isInit = true
+        }
     }
     
     func addAction(_ completion: @escaping (_ selectedIndex: Int) -> Void) {
@@ -78,11 +81,13 @@ class HPSegmentedControl: UIView {
         underLineView.flex.markDirty()
         setNeedsLayout()
         
-        UIView.animate(withDuration: 0.3, animations: { [weak self] in
-            guard let self = self else { return }
-            self.underLineView.flex.left(leadingDistance)
-            self.layoutIfNeeded()
-        })
+        if isInit {
+            UIView.animate(withDuration: 0.3, animations: { [weak self] in
+                guard let self = self else { return }
+                self.underLineView.flex.top(41).left(leadingDistance)
+                self.layoutIfNeeded()
+            })
+        }
     }
 }
 
