@@ -20,34 +20,13 @@ typealias SectionOfProjectModel = SectionModel<String, ProjectModel>
 final class MyProjectViewController: UIViewController, MyProjectViewDelegate {
     // swiftlint: disable force_cast
     private var mainView: MyProjectView {
-        return self.view as! MyProjectView
+        self.view as! MyProjectView
     }
     // swiftlint: enable force_cast
     
     private let vm = MyProjectViewModel()
     private let disposeBag = DisposeBag()
-    
-    let dataSource = RxCollectionViewSectionedReloadDataSource<SectionOfProjectModel>(
-        configureCell: { _, collectionView, indexPath, project in
-        let cell = collectionView
-                .dequeueReusableCell(withReuseIdentifier: ProjectCell.identifier,
-                                                      for: indexPath) as? ProjectCell
-        cell?.configure(project: project)
-        
-        return cell ?? UICollectionViewCell()
-        }, configureSupplementaryView: { dataSource, collectionview, title, indexPath in
-            let header = collectionview
-                .dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
-                                                  withReuseIdentifier: ProjectHeaderCell.identifier,
-                                                  for: indexPath) as? ProjectHeaderCell
-            let title = dataSource.sectionModels[indexPath.section].model
-            
-            header?.configure(title: title)
-
-            return header ?? UICollectionReusableView()
-        }
-    
-    )
+    private var dataSource: RxCollectionViewSectionedReloadDataSource<SectionOfProjectModel>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +45,23 @@ final class MyProjectViewController: UIViewController, MyProjectViewDelegate {
     
     func setup() {
         mainView.delegate = self
+        dataSource = RxCollectionViewSectionedReloadDataSource<SectionOfProjectModel>(
+            configureCell: { _, collectionView, indexPath, project in
+            let cell: ProjectCell = collectionView.dequeueReusableCell(for: indexPath)
+            cell.configure(project: project)
+            
+            return cell
+            }, configureSupplementaryView: { dataSource, collectionview, title, indexPath in
+                // swiftlint: disable line_length
+                let header: ProjectHeaderCell = collectionview.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, for: indexPath)
+                // swiftlint: enable line_length
+                let title = dataSource.sectionModels[indexPath.section].model
+                header.configure(title: title)
+
+                return header
+            }
+        
+        )
         vm.sections.accept([
             SectionOfProjectModel(model: "내 프로젝트", items: MockModel.sampleProjects),
             SectionOfProjectModel(model: "너 프로젝트", items: MockModel.sampleProjects)
@@ -75,27 +71,30 @@ final class MyProjectViewController: UIViewController, MyProjectViewDelegate {
     private func bind() {
         bindFABView()
         bindCollectionView()
-        let input = MyProjectViewModel.Input(click: mainView.fabView.rx.tap)
-        let output = vm.transform(input: input)
+//        let input = MyProjectViewModel.Input(click: mainView.fabView.rx.tap)
+//        let output = vm.transform(input: input)
     }
     private func bindFABView() {
         mainView.fabView.rx.tap
-            .subscribe { [weak self] _ in
-            self?.pushNavigation(to: .recording, with: nil)
+            .withUnretained(self)
+            .subscribe { vc, _ in
+                vc.pushNavigation(to: .recording, with: nil)
         }
         .disposed(by: disposeBag)
     }
     
     private func bindCollectionView() {
+        guard let dataSource = dataSource else { return }
+        
         vm.sections
             .bind(to: mainView.collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
         mainView.collectionView.rx.itemSelected
-            .subscribe { [weak self] indexPath in
-                guard let self = self, let indexPath = indexPath.element else { return }
-                self.pushNavigation(to: .projectDetail, 
-                                    with: vm.sections.value[indexPath.section].items[indexPath.row])
+            .withUnretained(self)
+            .subscribe { vc, indexPath in
+                vc.pushNavigation(to: .projectDetail, 
+                                  with: vc.vm.sections.value[indexPath.section].items[indexPath.row])
             }
             .disposed(by: disposeBag)
     }

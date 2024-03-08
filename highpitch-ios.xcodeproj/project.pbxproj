@@ -57,6 +57,7 @@
 		20970E222B8730BD00690459 /* MyProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E212B8730BD00690459 /* MyProjectView.swift */; };
 		209CF8842B9884960046936A /* SegmentedControlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209CF8832B9884960046936A /* SegmentedControlFactory.swift */; };
 		209CF8862B9889310046936A /* HPSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209CF8852B9889310046936A /* HPSegmentedControl.swift */; };
+		20E24DB92B9AA1FB004A0A88 /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = 20E24DB82B9AA1FB004A0A88 /* Reusable */; };
 		20E352A52B9334F000180508 /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E352A42B9334F000180508 /* ProjectService.swift */; };
 		20E352A82B933E9700180508 /* UseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E352A72B933E9700180508 /* UseCases.swift */; };
 		20F1E8172B984C9C0086522D /* ProjectDetailSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F1E8162B984C9C0086522D /* ProjectDetailSummaryView.swift */; };
@@ -156,6 +157,7 @@
 				20F545572B8D6DFE004B8462 /* RxCocoa in Frameworks */,
 				20970E1D2B87282300690459 /* PinLayout in Frameworks */,
 				20F5455B2B8D6DFE004B8462 /* RxSwift in Frameworks */,
+				20E24DB92B9AA1FB004A0A88 /* Reusable in Frameworks */,
 				20F545592B8D6DFE004B8462 /* RxRelay in Frameworks */,
 				2043C3402B8F057B00B3476C /* RxDataSources in Frameworks */,
 				2043C33E2B8F057B00B3476C /* Differentiator in Frameworks */,
@@ -493,6 +495,7 @@
 				20F5455A2B8D6DFE004B8462 /* RxSwift */,
 				2043C33D2B8F057B00B3476C /* Differentiator */,
 				2043C33F2B8F057B00B3476C /* RxDataSources */,
+				20E24DB82B9AA1FB004A0A88 /* Reusable */,
 			);
 			productName = "highpitch-ios";
 			productReference = 20970D572B84D62700690459 /* highpitch-ios.app */;
@@ -571,6 +574,7 @@
 				20970E1B2B87282300690459 /* XCRemoteSwiftPackageReference "PinLayout" */,
 				20F545552B8D6DFE004B8462 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				2043C33C2B8F057B00B3476C /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				20E24DB72B9AA1FB004A0A88 /* XCRemoteSwiftPackageReference "Reusable" */,
 			);
 			productRefGroup = 20970D582B84D62700690459 /* Products */;
 			projectDirPath = "";
@@ -1053,6 +1057,14 @@
 				minimumVersion = 1.10.5;
 			};
 		};
+		20E24DB72B9AA1FB004A0A88 /* XCRemoteSwiftPackageReference "Reusable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliSoftware/Reusable";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.2;
+			};
+		};
 		20F545552B8D6DFE004B8462 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -1083,6 +1095,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 20970E1B2B87282300690459 /* XCRemoteSwiftPackageReference "PinLayout" */;
 			productName = PinLayout;
+		};
+		20E24DB82B9AA1FB004A0A88 /* Reusable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 20E24DB72B9AA1FB004A0A88 /* XCRemoteSwiftPackageReference "Reusable" */;
+			productName = Reusable;
 		};
 		20F545562B8D6DFE004B8462 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;

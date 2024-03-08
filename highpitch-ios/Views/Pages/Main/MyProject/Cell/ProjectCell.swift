@@ -9,8 +9,9 @@ import UIKit
 import SwiftUI
 import PinLayout
 import FlexLayout
+import Reusable
 
-class ProjectCell: UICollectionViewCell {
+class ProjectCell: UICollectionViewCell, Reusable {
     static let identifier = "ProjectCell"
     
     fileprivate let titleLabel = UILabel()

@@ -10,8 +10,9 @@ import UIKit
 import SwiftUI
 import FlexLayout
 import PinLayout
+import Reusable
 
-class ProjectHeaderCell: UICollectionReusableView {
+class ProjectHeaderCell: UICollectionReusableView, Reusable {
     static let identifier = "ProjectHeaderCell"
     private let rootView = UIView()
     private let label = UILabel()

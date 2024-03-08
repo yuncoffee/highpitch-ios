@@ -12,13 +12,12 @@ import PinLayout
 import FlexLayout
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 final class PracticeListView: UIView, UIScrollViewDelegate {
     let collectionView: UICollectionView
     private let flowLayout = UICollectionViewFlowLayout()
     private let cellTemplate = PracticeCell()
-    
-    weak var delegate: ProjectViewDelegate?
     
     init() {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
@@ -28,7 +27,7 @@ final class PracticeListView: UIView, UIScrollViewDelegate {
         flowLayout.minimumInteritemSpacing = 0
         
         collectionView.delegate = self
-        collectionView.register(PracticeCell.self, forCellWithReuseIdentifier: PracticeCell.identifier)
+        collectionView.register(cellType: PracticeCell.self)
         
         addSubview(collectionView)
     }
@@ -59,8 +58,31 @@ extension PracticeListView:  UICollectionViewDelegateFlowLayout {
 
 struct PracticesView_Preview: PreviewProvider {
     static var previews: some View {
+        let view = PracticeListView()
+        let disposeBag = DisposeBag()
+        let vm = ProjectDetailViewModel()
+        let dataSource = RxCollectionViewSectionedReloadDataSource<SectionOfPracticeModel>(
+            configureCell: { _, collectionView, indexPath, practice in
+                let cell: PracticeCell = collectionView.dequeueReusableCell(for: indexPath)
+                cell.configure(with: practice)
+
+                return cell
+            }
+        )
+        let collectionView = view.collectionView
+        
         ViewPreview {
-            PracticeListView()
+            return view
+        }
+        .onAppear {
+            let model = [SectionOfPracticeModel(model: "", items: MockModel.sampleProjects.first!.practices)]
+            vm.sections.accept(model)
+            vm.sections
+                .bind(to: collectionView.rx.items(dataSource: dataSource))
+                .disposed(by: disposeBag)
+            collectionView.rx.itemSelected.subscribe { indexPath in
+                print(indexPath)
+            }.disposed(by: disposeBag)
         }
     }
 }

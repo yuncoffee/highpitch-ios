@@ -11,11 +11,10 @@ import RxCocoa
 import UIKit
 
 final class ProjectDetailViewModel: ViewModelType {
-    var project: ProjectModel?
     let sections = BehaviorRelay(value: [SectionOfPracticeModel]())
     let currentTabRelay = BehaviorRelay(value: ProjectDetailViewTabs.practices)
     let disposeBag = DisposeBag()
-
+    
     struct Input {
         let segmentedControlTap: ControlEvent<Void>
         let selectedSegmentedControl: ControlProperty<Int>

@@ -23,17 +23,10 @@ class ProjectDetailViewController: UIViewController, ProjectViewDelegate {
         return self.view as! ProjectDetailView
     }
     // swiftlint: enable force_cast
+    let buttonTapsObservable = BehaviorSubject<(IndexPath, PracticeModel)?>(value: nil)
     let vm = ProjectDetailViewModel()
+    var dataSource: RxCollectionViewSectionedReloadDataSource<SectionOfPracticeModel>?
     private let disposeBag = DisposeBag()
-    private let dataSource = RxCollectionViewSectionedReloadDataSource<SectionOfPracticeModel>(
-        configureCell: { _, collectionView, indexPath, practice in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PracticeCell.identifier,
-                                                          for: indexPath) as? PracticeCell
-            cell?.configure(with: practice)
-
-            return cell ?? UICollectionViewCell()
-        }
-    )
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +36,20 @@ class ProjectDetailViewController: UIViewController, ProjectViewDelegate {
     
     private func setup() {
         setupNavigationTitle()
+        dataSource = RxCollectionViewSectionedReloadDataSource<SectionOfPracticeModel>(
+            configureCell: { _, collectionView, indexPath, practice in
+                let cell: PracticeCell = collectionView.dequeueReusableCell(for: indexPath)
+                cell.configure(with: practice)
+                
+                // MARK: 클릭한 아이템에 바인딩
+                cell.remarkableButton.rx.tap
+                    .map { _ in (indexPath, practice) }
+                    .bind(to: self.buttonTapsObservable)
+                    .disposed(by: cell.disposeBag)
+                
+                return cell
+            }
+        )
     }
     
     private func setupNavigationTitle() {
@@ -75,7 +82,9 @@ class ProjectDetailViewController: UIViewController, ProjectViewDelegate {
     }
     
     private func bindCollectionView() {
+        guard let dataSource = dataSource else { return }
         let collectionView = mainView.practiceListView.collectionView
+        
         vm.sections
             .bind(to: collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
@@ -87,12 +96,28 @@ class ProjectDetailViewController: UIViewController, ProjectViewDelegate {
                 vc.pushNavigation(with: practice)
             }
             .disposed(by: disposeBag)
+        
+        buttonTapsObservable
+            .withUnretained(self)
+            .subscribe { vc, result in
+                guard let result = result else { return }
+                let (indexPath, practice) = result
+                vc.updateRemark(indexPath: indexPath, practice: practice)
+            }
+            .disposed(by: disposeBag)
     }
     
     override func loadView() {
         view = ProjectDetailView()
-        mainView.practiceListView.delegate = self
         mainView.layoutCell(selectedTab: vm.currentTabRelay.value)
+    }
+    
+    func updateRemark(indexPath: IndexPath, practice: PracticeModel) {
+        // MARK: 임시처리..
+        var section = vm.sections.value
+        section[indexPath.section].items[indexPath.row].isRemarkable.toggle()
+        vm.sections.accept(section)
+        print(practice.id)
     }
     
     func pushNavigation(with practice: PracticeModel) {
@@ -108,7 +133,6 @@ class ProjectDetailViewController: UIViewController, ProjectViewDelegate {
 
 extension ProjectDetailViewController {
     func configure(with project: ProjectModel) {
-        vm.project = project
         vm.sections.accept([SectionOfPracticeModel(model: "", items: project.practices)])
     }
 }
