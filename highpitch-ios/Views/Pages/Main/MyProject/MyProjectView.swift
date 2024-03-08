@@ -46,8 +46,6 @@ final class MyProjectView: UIView {
         
         collectionView.delegate = self
         collectionView.register(cellType: ProjectCell.self)
-        collectionView.register(ProjectCell.self,
-                                forCellWithReuseIdentifier: ProjectCell.identifier)
         collectionView.register(supplementaryViewType: ProjectHeaderCell.self,
                                 ofKind: UICollectionView.elementKindSectionHeader)
     }

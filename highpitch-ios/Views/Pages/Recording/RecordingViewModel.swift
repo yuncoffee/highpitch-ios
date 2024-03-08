@@ -6,7 +6,10 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 final class RecordingViewModel {
-    
+    let projectName = BehaviorRelay(value: Date().description)
+    let disposeBag = DisposeBag()
 }
