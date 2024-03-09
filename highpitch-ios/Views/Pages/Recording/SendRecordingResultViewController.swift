@@ -12,7 +12,7 @@ import FlexLayout
 
 final class SendRecordingResultViewController: UIViewController {
     private let rootView = UIView()
-    private let titleLabel = UILabel()
+    let titleLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()

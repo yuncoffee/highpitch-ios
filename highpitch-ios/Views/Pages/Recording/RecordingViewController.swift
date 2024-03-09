@@ -40,7 +40,7 @@ class RecordingViewController: UIViewController {
     private func setup() {
         setupNavigationBar()
         setupAlert()
-        setupSheetView()
+        setupSheet()
     }
     
     private func setupNavigationBar() {
@@ -57,7 +57,6 @@ class RecordingViewController: UIViewController {
         alertVC.addTextField { [weak self] textField in
             guard let self = self else { return }
             textField.placeholder = vm.projectName.value
-            textField.text = vm.projectName.value
         }
         alertVC.addAction(.init(title: "기존 프로젝트에 저장",
                                 style: .default,
@@ -72,18 +71,26 @@ class RecordingViewController: UIViewController {
             guard let self = self else { return }
             save(as: .makeNew)
         }))
-        alertVC.addAction(UIAlertAction(title: "취소", style: .cancel))
+        alertVC.addAction(UIAlertAction(title: "취소", 
+                                        style: .cancel,
+                                        handler: { [weak self] _ in
+            guard let self = self else { return }
+            vm.selectedIndexPath.accept(nil)
+        }))
     }
     
-    private func setupSheetView() {
+    private func setupSheet() {
         sheetVC.modalPresentationStyle = .pageSheet
         let vc = sheetVC.viewControllers.first as? SheetViewController
         
+        vc?.configure(viewModel: vm)
         vc?.dismissAction = { [weak self] index in
             guard let self = self else {return}
+            guard let indexPath = vm.selectedIndexPath.value else { return }
             if index == 1 {
                 dismiss(animated: true)
                 present(sendRecordingResultVC, animated: true)
+                sendRecordingResultVC.titleLabel.text = vm.sections.value[indexPath.section].items[indexPath.row].name
             } else {
                 present(alertVC, animated: true)
             }
@@ -91,16 +98,15 @@ class RecordingViewController: UIViewController {
     }
     
     private func bind() {
-        vm.projectName
-            .asDriver()
-            .drive { [weak self] value in
-                self?.mainView.outputLabel.text = value
-                self?.mainView.setNeedsLayout()
-            }
-            .disposed(by: disposeBag)
-        
         alertVC.textFields?.first?.rx.text.orEmpty
             .bind(to: vm.projectName)
+            .disposed(by: disposeBag)
+        
+        mainView.pauseButton.rx.tap
+            .withUnretained(self)
+            .subscribe { vc, _ in
+                print(vc.vm.selectedIndexPath.value)
+            }
             .disposed(by: disposeBag)
     }
     
@@ -111,12 +117,14 @@ class RecordingViewController: UIViewController {
         switch type {
         case .makeNew:
             present(sendRecordingResultVC, animated: true)
+            sendRecordingResultVC.titleLabel.text = vm.projectName.value
         case .previous:
             if let sheet = sheetVC.sheetPresentationController {
                 sheet.detents = [.medium(), .large()]
                 sheet.prefersGrabberVisible = true
                 sheet.prefersScrollingExpandsWhenScrolledToEdge = false
             }
+            vm.sections.accept([SectionOfProjectModel(model: "projects", items: MockModel.sampleProjects)])
             present(sheetVC, animated: true)
         }
     }

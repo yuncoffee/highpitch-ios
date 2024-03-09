@@ -32,6 +32,7 @@
 		204DF4C72B8C8F260067170C /* PracticeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4C62B8C8F260067170C /* PracticeDetailView.swift */; };
 		204DF4CB2B8C8FE90067170C /* PracticeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4CA2B8C8FE90067170C /* PracticeListView.swift */; };
 		204DF4CE2B8C90620067170C /* PracticeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4CD2B8C90620067170C /* PracticeCell.swift */; };
+		207AEBD12B9C0343008669C0 /* SelectProjectSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207AEBD02B9C0343008669C0 /* SelectProjectSheetCell.swift */; };
 		20970D5B2B84D62700690459 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970D5A2B84D62700690459 /* AppDelegate.swift */; };
 		20970D5D2B84D62700690459 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970D5C2B84D62700690459 /* SceneDelegate.swift */; };
 		20970D642B84D62800690459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20970D632B84D62800690459 /* Assets.xcassets */; };
@@ -116,6 +117,7 @@
 		204DF4C62B8C8F260067170C /* PracticeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeDetailView.swift; sourceTree = "<group>"; };
 		204DF4CA2B8C8FE90067170C /* PracticeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeListView.swift; sourceTree = "<group>"; };
 		204DF4CD2B8C90620067170C /* PracticeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeCell.swift; sourceTree = "<group>"; };
+		207AEBD02B9C0343008669C0 /* SelectProjectSheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectProjectSheetCell.swift; sourceTree = "<group>"; };
 		20970D572B84D62700690459 /* highpitch-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "highpitch-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20970D5A2B84D62700690459 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20970D5C2B84D62700690459 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,8 +222,9 @@
 				20970DFD2B85D1F400690459 /* RecordingViewController.swift */,
 				20E24DBA2B9B042A004A0A88 /* RecordingViewModel.swift */,
 				20E24DBE2B9B3EF3004A0A88 /* RecordingView.swift */,
-				20E24DBC2B9B395D004A0A88 /* SelectProjectSheetViewController.swift */,
 				20E24DC02B9B4045004A0A88 /* SendRecordingResultViewController.swift */,
+				20E24DBC2B9B395D004A0A88 /* SelectProjectSheetViewController.swift */,
+				207AEBD02B9C0343008669C0 /* SelectProjectSheetCell.swift */,
 			);
 			path = Recording;
 			sourceTree = "<group>";
@@ -701,6 +704,7 @@
 				20E352A52B9334F000180508 /* ProjectService.swift in Sources */,
 				20970E102B871E2100690459 /* PracticeModel.swift in Sources */,
 				20970E172B8724EB00690459 /* LabelFactory.swift in Sources */,
+				207AEBD12B9C0343008669C0 /* SelectProjectSheetCell.swift in Sources */,
 				20E24DBF2B9B3EF4004A0A88 /* RecordingView.swift in Sources */,
 				20119F642B94009D0014568A /* NotificationViewController.swift in Sources */,
 				20970E0E2B871E1100690459 /* ProjectModel.swift in Sources */,

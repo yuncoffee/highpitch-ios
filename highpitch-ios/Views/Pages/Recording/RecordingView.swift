@@ -14,7 +14,7 @@ final class RecordingView: UIView {
     private let rootView = UIView()
     let outputLabel = UILabel()
     private let playButton = UIButton()
-    private let pauseButton = UIButton()
+    let pauseButton = UIButton()
     
     init() {
         super.init(frame: .zero)
