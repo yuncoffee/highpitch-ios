@@ -64,8 +64,18 @@ identifier_name:
     - low
     - vc
     - vcs
+    - min
+    - max
+    - epm
+    - hex
+    - to
+    - gap
   allowed_symbols: ["_"]
 opt_in_rules:
   - missing_docs
 reporter: "xcode" # 보고 유형 (xcode, json, csv, codeclimate, checkstyle, junit, html, emoji, sonarqube, markdown, github-actions-logging),
-
+large_tuple:
+    warning: 3
+nesting:
+    type_level:
+        warning: 2

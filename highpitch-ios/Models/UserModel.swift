@@ -15,9 +15,18 @@ enum SignType {
 }
 
 struct UserModel {
-    var signType: SignType
-    var userName: String
-    var profile: UIImage
-    var epmRange: (min: Int, max: Int)
-    var fillerWord: [String] = []
+    var type: SignType
+    var name: String
+    var profile: UIImage?
+    var epm: UserSpm
+    var fillerWords: [String] = []
+}
+
+struct UserSpm {
+    var min: Double
+    var max: Double
+    
+    func average() -> Double {
+        (min + max) / 2
+    }
 }
