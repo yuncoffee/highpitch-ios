@@ -19,9 +19,12 @@ final class RecordingView: UIView {
     private let playButton = UIButton()
     let stopButton = UIButton()
     private let symbolConfig = UIImage.SymbolConfiguration(font: .pretendard(name: .medium, size: 26))
+    private var isPlay = false
+    private var recordingDotAnimation: UIViewPropertyAnimator?
     
     init() {
         super.init(frame: .zero)
+        
         layout()
     }
     
@@ -98,21 +101,33 @@ final class RecordingView: UIView {
         }
     }
     
-    func updateRecordingIndicatorView() {
-        UIView.animate(withDuration: 2, delay: 0, options: .curveLinear, animations: { [weak self] in
-            self?.recordingIndicatorView.flex.backgroundColor(.clear)
-        }, completion: { _ in
-            UIView.animate(withDuration: 2, delay: 0, options: .curveLinear, animations: { [weak self] in
-                self?.recordingIndicatorView.backgroundColor = .recordDot
-            }, completion: { [weak self] _ in
-                self?.updateRecordingIndicatorView()
-            })
-        })
-        layoutIfNeeded()
+    func startAnimation() {
+        guard !isPlay else { return }
+        isPlay = true
+        UIView.animate(withDuration: 2, delay: 0, options: [.repeat, .autoreverse], animations: {
+            self.recordingIndicatorView.alpha = 0
+        }, completion: nil)
+    }
+    
+    func stopAnimation() {
+        guard isPlay else { return }
+        isPlay = false
+        recordingIndicatorView.layer.removeAllAnimations()
+        recordingIndicatorView.alpha = 1
     }
     
     func playRecord() {
-        updateRecordingIndicatorView()
+        if isPlay {
+            print("잠시 멈춰!")
+            stopAnimation()
+        } else {
+            print("녹음 시작")
+            startAnimation()
+        }
+    }
+    
+    func stopRecord() {
+        print("멈춰!")
     }
     
     override func layoutSubviews() {
