@@ -43,11 +43,6 @@ extension RecordingViewController {
                 .marginTop(16)
         }
 
-        override func viewWillDisappear(_ animated: Bool) {
-            super.viewWillDisappear(animated)
-            dismissAction?(0)
-        }
-        
         private func setup() {
             view.backgroundColor = .white
             setupCollectionView()
@@ -83,6 +78,10 @@ extension RecordingViewController {
         private func setupNavigation() {
             let saveAction = UIAction { [weak self] _ in
                 guard let self = self else { return }
+                guard let indexPath = vm?.selectedIndexPath.value else { return }
+                // MARK: 프로젝트를 선택할 수 있게 하기
+                let selectedProject = vm?.sections.value[indexPath.section].items[indexPath.row].name ?? "선택X"
+                vm?.projectName.accept(selectedProject)
                 dismissAction?(1)
             }
             let titleLabel = UILabel()
@@ -121,6 +120,7 @@ extension RecordingViewController {
         
         @objc func close() {
             dismiss(animated: true)
+            dismissAction?(0)
         }
         
         // MARK: - 데이터 가져오기
@@ -168,7 +168,8 @@ struct SheetViewController_Previews: PreviewProvider {
             let sheetVC = vc.viewControllers.first! as? RecordingViewController.SheetViewController
             sheetVC?.configure(viewModel: vm)
             sheetVC?.saveButton.rx.tap.subscribe { _ in
-                self.vm.sections.accept([SectionOfProjectModel(model: "projects", items: MockModel.sampleProjects)])
+                let sections = [SectionOfProjectModel(model: "projects", items: MockModel.sampleProjects)]
+                self.vm.sections.accept(sections)
             }
             .disposed(by: disposeBag)
         }

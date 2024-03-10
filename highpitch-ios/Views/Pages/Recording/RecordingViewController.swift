@@ -80,21 +80,22 @@ class RecordingViewController: UIViewController {
     }
     
     private func setupSheet() {
+        
         sheetVC.modalPresentationStyle = .pageSheet
         let vc = sheetVC.viewControllers.first as? SheetViewController
         
         vc?.configure(viewModel: vm)
         vc?.dismissAction = { [weak self] index in
             guard let self = self else {return}
-            guard let indexPath = vm.selectedIndexPath.value else { return }
             if index == 1 {
                 dismiss(animated: true)
+                sendRecordingResultVC.updateLayout()
                 present(sendRecordingResultVC, animated: true)
-                sendRecordingResultVC.titleLabel.text = vm.sections.value[indexPath.section].items[indexPath.row].name
             } else {
                 present(alertVC, animated: true)
             }
         }
+        sendRecordingResultVC.configure(viewModel: vm)
     }
     
     private func bind() {
@@ -102,10 +103,10 @@ class RecordingViewController: UIViewController {
             .bind(to: vm.projectName)
             .disposed(by: disposeBag)
         
-        mainView.pauseButton.rx.tap
+        mainView.stopButton.rx.tap
             .withUnretained(self)
             .subscribe { vc, _ in
-                print(vc.vm.selectedIndexPath.value)
+                print("\(String(describing: vc.vm.selectedIndexPath.value))")
             }
             .disposed(by: disposeBag)
     }
@@ -116,8 +117,8 @@ class RecordingViewController: UIViewController {
     private func save(as type: PracticeSaveType) {
         switch type {
         case .makeNew:
+            sendRecordingResultVC.updateLayout()
             present(sendRecordingResultVC, animated: true)
-            sendRecordingResultVC.titleLabel.text = vm.projectName.value
         case .previous:
             if let sheet = sheetVC.sheetPresentationController {
                 sheet.detents = [.medium(), .large()]
