@@ -9,6 +9,7 @@ import UIKit
 import SwiftUI
 import RxSwift
 import RxCocoa
+import AVFoundation
 
 enum PracticeSaveType: Int {
     case makeNew
@@ -41,6 +42,8 @@ class RecordingViewController: UIViewController {
         setupNavigationBar()
         setupAlert()
         setupSheet()
+        vm.service.setupRecorderDelegate(self)
+        vm.service.setupPlayerDelegate(self)
     }
     
     private func setupNavigationBar() {
@@ -80,7 +83,6 @@ class RecordingViewController: UIViewController {
     }
     
     private func setupSheet() {
-        
         sheetVC.modalPresentationStyle = .pageSheet
         let vc = sheetVC.viewControllers.first as? SheetViewController
         
@@ -109,11 +111,42 @@ class RecordingViewController: UIViewController {
                 print("\(String(describing: vc.vm.selectedIndexPath.value))")
             }
             .disposed(by: disposeBag)
+        
+        mainView.playButton.rx.tap
+            .withUnretained(self)
+            .subscribe { vc, _ in
+                vc.vm.service.startRecording()
+            }
+            .disposed(by: disposeBag)
+        
+        mainView.pauseButton.rx.tap
+            .withUnretained(self)
+            .subscribe { vc, _ in
+                vc.vm.service.pauseRecording()
+            }
+            .disposed(by: disposeBag)
+        
+        mainView.stopButton.rx.tap
+            .withUnretained(self)
+            .subscribe { vc, _ in
+                vc.vm.service.finishAudioRecording(success: true)
+            }
+            .disposed(by: disposeBag)
+        
+        mainView.testButton.rx.tap
+            .withUnretained(self)
+            .subscribe { vc, _ in
+                guard let url = vc.vm.service.currentURL else { return }
+                print(url)
+                vc.vm.service.startPlaying(file: url)
+            }
+            .disposed(by: disposeBag)
     }
     
     override func loadView() {
         view = RecordingView()
     }
+    
     private func save(as type: PracticeSaveType) {
         switch type {
         case .makeNew:
@@ -129,6 +162,40 @@ class RecordingViewController: UIViewController {
             present(sheetVC, animated: true)
         }
     }
+}
+
+extension RecordingViewController: AVAudioRecorderDelegate, RecorderDelegate {
+    func recordingDidStart() {
+        mainView.startRecord()
+    }
+    
+    func recordingDidEnd() {
+        mainView.stopRecord()
+    }
+    
+    func recordingCurrentTiming(_ timing: String) {
+        mainView.updateLayout(with: timing)
+        print(timing)
+    }
+    
+    func recordingDidPauseed() {
+        mainView.pauseRecord()
+    }
+    
+    func recordingDidContinued() {
+        mainView.startRecord()
+    }
+}
+
+extension RecordingViewController: AVAudioPlayerDelegate, PlayerDelegate {
+    func playerDidStart() {
+        print("시작댐?")
+    }
+    
+    func playerDidEnd() {
+        print("dsds")
+    }
+
 }
 
 struct RecordingViewController_Previews: PreviewProvider {

@@ -58,6 +58,7 @@
 		20970E222B8730BD00690459 /* MyProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E212B8730BD00690459 /* MyProjectView.swift */; };
 		209CF8842B9884960046936A /* SegmentedControlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209CF8832B9884960046936A /* SegmentedControlFactory.swift */; };
 		209CF8862B9889310046936A /* HPSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209CF8852B9889310046936A /* HPSegmentedControl.swift */; };
+		20B5092A2BA0254E00076FFA /* RecordingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B509292BA0254E00076FFA /* RecordingService.swift */; };
 		20E24DB92B9AA1FB004A0A88 /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = 20E24DB82B9AA1FB004A0A88 /* Reusable */; };
 		20E24DBB2B9B042A004A0A88 /* RecordingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E24DBA2B9B042A004A0A88 /* RecordingViewModel.swift */; };
 		20E24DBD2B9B395D004A0A88 /* SelectProjectSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E24DBC2B9B395D004A0A88 /* SelectProjectSheetViewController.swift */; };
@@ -145,6 +146,7 @@
 		20970E212B8730BD00690459 /* MyProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectView.swift; sourceTree = "<group>"; };
 		209CF8832B9884960046936A /* SegmentedControlFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlFactory.swift; sourceTree = "<group>"; };
 		209CF8852B9889310046936A /* HPSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPSegmentedControl.swift; sourceTree = "<group>"; };
+		20B509292BA0254E00076FFA /* RecordingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingService.swift; sourceTree = "<group>"; };
 		20E24DBA2B9B042A004A0A88 /* RecordingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewModel.swift; sourceTree = "<group>"; };
 		20E24DBC2B9B395D004A0A88 /* SelectProjectSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectProjectSheetViewController.swift; sourceTree = "<group>"; };
 		20E24DBE2B9B3EF3004A0A88 /* RecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
@@ -464,6 +466,7 @@
 			isa = PBXGroup;
 			children = (
 				20E352A42B9334F000180508 /* ProjectService.swift */,
+				20B509292BA0254E00076FFA /* RecordingService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 				204DF4CE2B8C90620067170C /* PracticeCell.swift in Sources */,
 				204DF4BD2B8C460D0067170C /* ProjectCell.swift in Sources */,
 				20119F6B2B946C250014568A /* UIFont+Extension.swift in Sources */,
+				20B5092A2BA0254E00076FFA /* RecordingService.swift in Sources */,
 				20F545662B8DB3AC004B8462 /* Type+Extension.swift in Sources */,
 				20E24DBB2B9B042A004A0A88 /* RecordingViewModel.swift in Sources */,
 				204DF4C42B8C643B0067170C /* ProjectDetailView.swift in Sources */,
