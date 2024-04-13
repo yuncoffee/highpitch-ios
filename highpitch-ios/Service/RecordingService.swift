@@ -153,7 +153,7 @@ class RecordingService {
         let hr = Int((audioRecorder.currentTime / 60) / 60)
         let min = Int(audioRecorder.currentTime / 60)
         let sec = Int(audioRecorder.currentTime.truncatingRemainder(dividingBy: 60))
-        let totalTimeString = String(format: "%02dh %02dm %02ds", hr, min, sec)
+        let totalTimeString = String(format: "%02d:%02d:%02d", hr, min, sec)
         recorderDelegate?.recordingCurrentTiming(totalTimeString)
         audioRecorder.updateMeters()
     }

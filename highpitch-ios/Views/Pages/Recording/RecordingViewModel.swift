@@ -50,6 +50,13 @@ final class RecordingViewModel {
         } catch {
             fatalError(error.localizedDescription)
         }
+        allFiles.forEach { url in
+            do {
+                try FileManager.default.removeItem(at: url)
+            } catch {
+                    print("FAIL!!")
+            }
+        }
         print(allFiles)
     }
 }

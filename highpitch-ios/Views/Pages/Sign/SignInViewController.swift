@@ -6,8 +6,15 @@
 //
 
 import UIKit
+import SwiftUI
 
 final class SignInViewController: UIViewController {
+    
+    // swiftlint: disable force_cast
+    private var mainView: SignInView {
+        view as! SignInView
+    }
+    // swiftlint: enable force_cast
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,5 +48,13 @@ final class SignInViewController: UIViewController {
     
     deinit {
         print("I'm Die")
+    }
+}
+
+struct SignInViewController_Previews: PreviewProvider {
+    static var previews: some View {
+        ViewControllerPreview {
+            SignInViewController()
+        }
     }
 }
