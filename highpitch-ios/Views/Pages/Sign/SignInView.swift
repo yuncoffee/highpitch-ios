@@ -72,7 +72,6 @@ class SignInView: UIView {
         }
         .padding(24)
         .border(2, .red)
-        
         addSubview(rootView)
     }
     
