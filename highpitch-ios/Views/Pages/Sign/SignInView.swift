@@ -39,8 +39,7 @@ class SignInView: UIView {
         
         toSignUpButton.setTitle("회원가입", for: .normal)
         toSignUpButton.setTitleColor(.black, for: .normal)
-        
-//        idTextField.borderStyle = .roundedRect
+
         idTextField.placeholder = "사용자 ID 입력"
         idTextField.autocorrectionType = .no
         idTextField.spellCheckingType = .no
