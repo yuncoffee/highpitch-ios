@@ -15,6 +15,7 @@ final class MyPageInfoHeaderCell: UICollectionViewCell, Reusable {
     static let identifier = "MyPageInfoHeaderCell"
     
     private let titleLabel = UILabel()
+    private var height = 48.0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -58,6 +59,10 @@ extension MyPageInfoHeaderCell {
         titleLabel.flex.markDirty()
         
         setNeedsLayout()
+    }
+    
+    func getHeight() -> CGFloat {
+        height
     }
 }
  

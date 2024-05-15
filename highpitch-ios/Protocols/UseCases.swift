@@ -15,6 +15,19 @@ enum Links {
     case projectDetail
 }
 
+enum MyPageLinks: String {
+    case profile = "프로필 정보"
+    case account = "계정 정보"
+    case myFillerWord = "내 습관어 변경"
+    case mySpeakingSpeed = "내 말빠르기 기준 변경"
+    case myTheme = "테마 변경"
+    case myData = "데이터 저장 관리"
+    case help = "1:1 문의하기"
+    case terms = "이용 약관"
+    case myOpinion = "의견 보내기"
+    case appVersion = "앱 버전"
+}
+
 protocol ProjectUseCase {
     func fetchs() -> [ProjectModel]
     func update(_ item: ProjectModel) // ID로 변경하는게 좋을듯

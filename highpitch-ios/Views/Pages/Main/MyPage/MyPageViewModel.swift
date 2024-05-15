@@ -6,7 +6,10 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 final class MyPageViewModel {
-    
+    let sections = BehaviorRelay(value: [SectionOfMyPageInfo]())
+    let navigationTo = PublishRelay<Void>()
 }
