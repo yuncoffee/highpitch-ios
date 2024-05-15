@@ -62,17 +62,17 @@ final class MyProjectViewController: UIViewController, MyProjectViewDelegate {
             }
         
         )
+        #if DEBUG
         vm.sections.accept([
             SectionOfProjectModel(model: "내 프로젝트", items: MockModel.sampleProjects),
             SectionOfProjectModel(model: "너 프로젝트", items: MockModel.sampleProjects)
         ])
+        #endif
     }
 
     private func bind() {
         bindFABView()
         bindCollectionView()
-//        let input = MyProjectViewModel.Input(click: mainView.fabView.rx.tap)
-//        let output = vm.transform(input: input)
     }
     private func bindFABView() {
         mainView.fabView.rx.tap

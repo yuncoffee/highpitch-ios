@@ -25,6 +25,10 @@
 		203EB05D2B8CA0A500FCEF52 /* PracticeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203EB05C2B8CA0A500FCEF52 /* PracticeDetailViewController.swift */; };
 		2043C33E2B8F057B00B3476C /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 2043C33D2B8F057B00B3476C /* Differentiator */; };
 		2043C3402B8F057B00B3476C /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 2043C33F2B8F057B00B3476C /* RxDataSources */; };
+		204C9C642BF4A8D3003E5D22 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C9C632BF4A8D3003E5D22 /* MyPageView.swift */; };
+		204C9C662BF4A9F9003E5D22 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C9C652BF4A9F9003E5D22 /* MyPageViewModel.swift */; };
+		204C9C692BF4AD81003E5D22 /* MyPageInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C9C682BF4AD81003E5D22 /* MyPageInfoCell.swift */; };
+		204C9C6B2BF4AD8D003E5D22 /* MyPageInfoHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C9C6A2BF4AD8D003E5D22 /* MyPageInfoHeaderCell.swift */; };
 		204DF4BD2B8C460D0067170C /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4BC2B8C460D0067170C /* ProjectCell.swift */; };
 		204DF4BF2B8C54200067170C /* MockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4BE2B8C54200067170C /* MockModel.swift */; };
 		204DF4C22B8C5BE40067170C /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DF4C12B8C5BE40067170C /* ProjectDetailViewController.swift */; };
@@ -113,6 +117,10 @@
 		20119F742B946CFC0014568A /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		20119F752B946CFC0014568A /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
 		203EB05C2B8CA0A500FCEF52 /* PracticeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeDetailViewController.swift; sourceTree = "<group>"; };
+		204C9C632BF4A8D3003E5D22 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		204C9C652BF4A9F9003E5D22 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
+		204C9C682BF4AD81003E5D22 /* MyPageInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageInfoCell.swift; sourceTree = "<group>"; };
+		204C9C6A2BF4AD8D003E5D22 /* MyPageInfoHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageInfoHeaderCell.swift; sourceTree = "<group>"; };
 		204DF4BC2B8C460D0067170C /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
 		204DF4BE2B8C54200067170C /* MockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModel.swift; sourceTree = "<group>"; };
 		204DF4C12B8C5BE40067170C /* ProjectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +210,9 @@
 			isa = PBXGroup;
 			children = (
 				20970DFF2B85D20A00690459 /* MyPageViewController.swift */,
+				204C9C632BF4A8D3003E5D22 /* MyPageView.swift */,
+				204C9C652BF4A9F9003E5D22 /* MyPageViewModel.swift */,
+				204C9C672BF4AD50003E5D22 /* Cell */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -265,6 +276,15 @@
 				20119F712B946CFB0014568A /* Pretendard-Thin.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		204C9C672BF4AD50003E5D22 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				204C9C682BF4AD81003E5D22 /* MyPageInfoCell.swift */,
+				204C9C6A2BF4AD8D003E5D22 /* MyPageInfoHeaderCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		204DF4C02B8C5BB30067170C /* ProjectDetail */ = {
@@ -692,9 +712,11 @@
 				20119F692B9409B60014568A /* MyPracticeAnalysisViewController.swift in Sources */,
 				20970D5B2B84D62700690459 /* AppDelegate.swift in Sources */,
 				204DF4CE2B8C90620067170C /* PracticeCell.swift in Sources */,
+				204C9C662BF4A9F9003E5D22 /* MyPageViewModel.swift in Sources */,
 				204DF4BD2B8C460D0067170C /* ProjectCell.swift in Sources */,
 				20119F6B2B946C250014568A /* UIFont+Extension.swift in Sources */,
 				20B5092A2BA0254E00076FFA /* RecordingService.swift in Sources */,
+				204C9C6B2BF4AD8D003E5D22 /* MyPageInfoHeaderCell.swift in Sources */,
 				20F545662B8DB3AC004B8462 /* Type+Extension.swift in Sources */,
 				20E24DBB2B9B042A004A0A88 /* RecordingViewModel.swift in Sources */,
 				204DF4C42B8C643B0067170C /* ProjectDetailView.swift in Sources */,
@@ -723,11 +745,13 @@
 				20E352A52B9334F000180508 /* ProjectService.swift in Sources */,
 				20734FB72BCAC88C00F59116 /* SignInView.swift in Sources */,
 				20970E102B871E2100690459 /* PracticeModel.swift in Sources */,
+				204C9C642BF4A8D3003E5D22 /* MyPageView.swift in Sources */,
 				20970E172B8724EB00690459 /* LabelFactory.swift in Sources */,
 				207AEBD12B9C0343008669C0 /* SelectProjectSheetCell.swift in Sources */,
 				20E24DBF2B9B3EF4004A0A88 /* RecordingView.swift in Sources */,
 				20119F642B94009D0014568A /* NotificationViewController.swift in Sources */,
 				20970E0E2B871E1100690459 /* ProjectModel.swift in Sources */,
+				204C9C692BF4AD81003E5D22 /* MyPageInfoCell.swift in Sources */,
 				209CF8862B9889310046936A /* HPSegmentedControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
