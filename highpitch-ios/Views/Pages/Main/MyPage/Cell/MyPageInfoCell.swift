@@ -28,9 +28,9 @@ final class MyPageInfoCell: UICollectionViewCell, Reusable {
     
     private func setup() {
         titleLabel.text = "LINK"
-        iconView.image = UIImage(systemName: "chevron.right")?.withTintColor(.gray, renderingMode: .alwaysOriginal)
+        iconView.image = UIImage(systemName: "chevron.right")?
+            .withTintColor(.gray, renderingMode: .alwaysOriginal)
         iconView.contentMode = .scaleAspectFit
-        
         
         contentView.flex.direction(.row).justifyContent(.spaceBetween).define { flex in
             flex.addItem(titleLabel)

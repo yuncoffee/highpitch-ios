@@ -55,7 +55,10 @@ final class MyPageViewController: UIViewController, MyPageViewDelegate {
                 
                 return cell
             }, configureSupplementaryView: { dataSource, collectionView, title, indexPath in
-                let header: MyPageInfoHeaderCell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, for: indexPath)
+                let header: MyPageInfoHeaderCell = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: UICollectionView.elementKindSectionHeader,
+                    for: indexPath
+                )
                 
                 let title = dataSource.sectionModels[indexPath.section].model
                 header.configure(title: title)
@@ -85,7 +88,10 @@ final class MyPageViewController: UIViewController, MyPageViewDelegate {
         mainView.collectionView.rx.itemSelected
             .withUnretained(self)
             .subscribe { vc, indexPath in
-                guard let pageLink = MyPageLinks(rawValue: vc.vm.sections.value[indexPath.section].items[indexPath.row].rawValue) else { return }
+                guard let pageLink = MyPageLinks(
+                    rawValue: vc.vm.sections.value[indexPath.section].items[indexPath.row].rawValue
+                ) 
+                else { return }
                 
                 vc.pushNavigation(to: pageLink)
             }

@@ -13,7 +13,15 @@ import FlexLayout
 
 class SignInView: UIView {
     private let rootView = UIView()
-
+    
+    private let landingImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(resource: .landing)
+        imageView.contentMode = .scaleAspectFit
+        
+        return imageView
+    }()
+    
     let signInButton = UIButton()
     
     let toFindIdButton = UIButton()
@@ -56,6 +64,10 @@ class SignInView: UIView {
         passwordTextField.leftViewMode = .always
         
         rootView.flex.gap(16).define { flex in
+            flex.addItem(landingImageView)
+                .maxHeight(244)
+                .marginTop(136)
+                .grow(1)
             flex.addItem().define { flex in
                 flex.addItem(idTextField)
                     .height(48)
@@ -69,7 +81,6 @@ class SignInView: UIView {
                 .backgroundColor(.green)
             flex.addItem(toSignUpButton)
         }
-        .padding(24)
         .border(2, .red)
         addSubview(rootView)
     }

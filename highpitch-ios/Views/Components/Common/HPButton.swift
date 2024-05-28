@@ -93,7 +93,6 @@ struct HPButton_Preview: PreviewProvider {
             
             rootView.setNeedsLayout()
             
-            
             return rootView
         }
         .border(.red)

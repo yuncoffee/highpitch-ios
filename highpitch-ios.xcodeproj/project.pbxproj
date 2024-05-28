@@ -51,7 +51,6 @@
 		20970E002B85D20A00690459 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970DFF2B85D20A00690459 /* MyPageViewController.swift */; };
 		20970E022B85D21900690459 /* MyProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E012B85D21900690459 /* MyProjectViewController.swift */; };
 		20970E042B85D24100690459 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E032B85D24100690459 /* SignInViewController.swift */; };
-		20970E062B85D24800690459 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E052B85D24800690459 /* SignUpViewController.swift */; };
 		20970E0E2B871E1100690459 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E0D2B871E1100690459 /* ProjectModel.swift */; };
 		20970E102B871E2100690459 /* PracticeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E0F2B871E2100690459 /* PracticeModel.swift */; };
 		20970E122B871E3400690459 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20970E112B871E3400690459 /* UserModel.swift */; };
@@ -64,6 +63,14 @@
 		209CF8842B9884960046936A /* SegmentedControlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209CF8832B9884960046936A /* SegmentedControlFactory.swift */; };
 		209CF8862B9889310046936A /* HPSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209CF8852B9889310046936A /* HPSegmentedControl.swift */; };
 		20B5092A2BA0254E00076FFA /* RecordingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B509292BA0254E00076FFA /* RecordingService.swift */; };
+		20B7344E2C05CAAC00A59891 /* SignBeforeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7344D2C05CAAC00A59891 /* SignBeforeVC.swift */; };
+		20B734502C05CAC700A59891 /* SignBeforeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7344F2C05CAC700A59891 /* SignBeforeView.swift */; };
+		20B734522C05CC2200A59891 /* SignVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B734512C05CC2200A59891 /* SignVM.swift */; };
+		20B734552C05CE9100A59891 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B734542C05CE9100A59891 /* SplashVC.swift */; };
+		20B734582C067EFA00A59891 /* SignUpIDVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B734572C067EFA00A59891 /* SignUpIDVC.swift */; };
+		20B7345A2C067F0800A59891 /* SignUpPWVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B734592C067F0800A59891 /* SignUpPWVC.swift */; };
+		20B7345C2C067FA300A59891 /* SignUPIDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7345B2C067FA300A59891 /* SignUPIDView.swift */; };
+		20B7345E2C06830B00A59891 /* SignUPPWView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7345D2C06830B00A59891 /* SignUPPWView.swift */; };
 		20D72BA82BE8B8B800136876 /* HPButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D72BA72BE8B8B800136876 /* HPButton.swift */; };
 		20E24DB92B9AA1FB004A0A88 /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = 20E24DB82B9AA1FB004A0A88 /* Reusable */; };
 		20E24DBB2B9B042A004A0A88 /* RecordingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E24DBA2B9B042A004A0A88 /* RecordingViewModel.swift */; };
@@ -147,7 +154,6 @@
 		20970DFF2B85D20A00690459 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		20970E012B85D21900690459 /* MyProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectViewController.swift; sourceTree = "<group>"; };
 		20970E032B85D24100690459 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		20970E052B85D24800690459 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		20970E0D2B871E1100690459 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
 		20970E0F2B871E2100690459 /* PracticeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeModel.swift; sourceTree = "<group>"; };
 		20970E112B871E3400690459 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -158,6 +164,14 @@
 		209CF8832B9884960046936A /* SegmentedControlFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlFactory.swift; sourceTree = "<group>"; };
 		209CF8852B9889310046936A /* HPSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPSegmentedControl.swift; sourceTree = "<group>"; };
 		20B509292BA0254E00076FFA /* RecordingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingService.swift; sourceTree = "<group>"; };
+		20B7344D2C05CAAC00A59891 /* SignBeforeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignBeforeVC.swift; sourceTree = "<group>"; };
+		20B7344F2C05CAC700A59891 /* SignBeforeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignBeforeView.swift; sourceTree = "<group>"; };
+		20B734512C05CC2200A59891 /* SignVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignVM.swift; sourceTree = "<group>"; };
+		20B734542C05CE9100A59891 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		20B734572C067EFA00A59891 /* SignUpIDVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpIDVC.swift; sourceTree = "<group>"; };
+		20B734592C067F0800A59891 /* SignUpPWVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPWVC.swift; sourceTree = "<group>"; };
+		20B7345B2C067FA300A59891 /* SignUPIDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPIDView.swift; sourceTree = "<group>"; };
+		20B7345D2C06830B00A59891 /* SignUPPWView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPPWView.swift; sourceTree = "<group>"; };
 		20D72BA72BE8B8B800136876 /* HPButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPButton.swift; sourceTree = "<group>"; };
 		20E24DBA2B9B042A004A0A88 /* RecordingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewModel.swift; sourceTree = "<group>"; };
 		20E24DBC2B9B395D004A0A88 /* SelectProjectSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectProjectSheetViewController.swift; sourceTree = "<group>"; };
@@ -401,6 +415,7 @@
 		20970DED2B85CB9E00690459 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				20B734532C05CE7E00A59891 /* Splash */,
 				20970E082B85D26000690459 /* Sign */,
 				20970E072B85D25100690459 /* Onboarding */,
 				20970DFC2B85D1C500690459 /* Main */,
@@ -446,9 +461,12 @@
 		20970E082B85D26000690459 /* Sign */ = {
 			isa = PBXGroup;
 			children = (
+				20B734512C05CC2200A59891 /* SignVM.swift */,
+				20B7344C2C05CA3200A59891 /* SignBefore */,
+				20B734562C067EA200A59891 /* SignUp */,
+				20B7345F2C0686AA00A59891 /* SignIn */,
 				20970E032B85D24100690459 /* SignInViewController.swift */,
 				20734FB62BCAC88C00F59116 /* SignInView.swift */,
-				20970E052B85D24800690459 /* SignUpViewController.swift */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -486,6 +504,41 @@
 				20F545602B8DABDF004B8462 /* Cell */,
 			);
 			path = MyProject;
+			sourceTree = "<group>";
+		};
+		20B7344C2C05CA3200A59891 /* SignBefore */ = {
+			isa = PBXGroup;
+			children = (
+				20B7344D2C05CAAC00A59891 /* SignBeforeVC.swift */,
+				20B7344F2C05CAC700A59891 /* SignBeforeView.swift */,
+			);
+			path = SignBefore;
+			sourceTree = "<group>";
+		};
+		20B734532C05CE7E00A59891 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				20B734542C05CE9100A59891 /* SplashVC.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		20B734562C067EA200A59891 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				20B734572C067EFA00A59891 /* SignUpIDVC.swift */,
+				20B7345B2C067FA300A59891 /* SignUPIDView.swift */,
+				20B734592C067F0800A59891 /* SignUpPWVC.swift */,
+				20B7345D2C06830B00A59891 /* SignUPPWView.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		20B7345F2C0686AA00A59891 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 		20D72BA62BE8B89200136876 /* Common */ = {
@@ -718,22 +771,28 @@
 				20B5092A2BA0254E00076FFA /* RecordingService.swift in Sources */,
 				204C9C6B2BF4AD8D003E5D22 /* MyPageInfoHeaderCell.swift in Sources */,
 				20F545662B8DB3AC004B8462 /* Type+Extension.swift in Sources */,
+				20B734552C05CE9100A59891 /* SplashVC.swift in Sources */,
 				20E24DBB2B9B042A004A0A88 /* RecordingViewModel.swift in Sources */,
 				204DF4C42B8C643B0067170C /* ProjectDetailView.swift in Sources */,
 				209CF8842B9884960046936A /* SegmentedControlFactory.swift in Sources */,
 				20F545642B8DB2D7004B8462 /* MyProjectViewModel.swift in Sources */,
 				20F5455F2B8D73AE004B8462 /* UIColor+Extension.swift in Sources */,
+				20B7345C2C067FA300A59891 /* SignUPIDView.swift in Sources */,
 				204DF4CB2B8C8FE90067170C /* PracticeListView.swift in Sources */,
+				20B734582C067EFA00A59891 /* SignUpIDVC.swift in Sources */,
 				20970E1F2B8729CB00690459 /* Preview+Extension.swift in Sources */,
+				20B7345A2C067F0800A59891 /* SignUpPWVC.swift in Sources */,
 				20E352A82B933E9700180508 /* UseCases.swift in Sources */,
 				20970E022B85D21900690459 /* MyProjectViewController.swift in Sources */,
-				20970E062B85D24800690459 /* SignUpViewController.swift in Sources */,
+				20B734522C05CC2200A59891 /* SignVM.swift in Sources */,
 				20970E122B871E3400690459 /* UserModel.swift in Sources */,
 				204DF4C72B8C8F260067170C /* PracticeDetailView.swift in Sources */,
 				20970DFE2B85D1F400690459 /* RecordingViewController.swift in Sources */,
 				203EB05D2B8CA0A500FCEF52 /* PracticeDetailViewController.swift in Sources */,
 				20D72BA82BE8B8B800136876 /* HPButton.swift in Sources */,
+				20B734502C05CAC700A59891 /* SignBeforeView.swift in Sources */,
 				20970E042B85D24100690459 /* SignInViewController.swift in Sources */,
+				20B7345E2C06830B00A59891 /* SignUPPWView.swift in Sources */,
 				200730F52B970E0500157E1C /* ProjectDetailViewModel.swift in Sources */,
 				20F1E8172B984C9C0086522D /* ProjectDetailSummaryView.swift in Sources */,
 				200730F32B9559FB00157E1C /* Date+Extension.swift in Sources */,
@@ -748,6 +807,7 @@
 				204C9C642BF4A8D3003E5D22 /* MyPageView.swift in Sources */,
 				20970E172B8724EB00690459 /* LabelFactory.swift in Sources */,
 				207AEBD12B9C0343008669C0 /* SelectProjectSheetCell.swift in Sources */,
+				20B7344E2C05CAAC00A59891 /* SignBeforeVC.swift in Sources */,
 				20E24DBF2B9B3EF4004A0A88 /* RecordingView.swift in Sources */,
 				20119F642B94009D0014568A /* NotificationViewController.swift in Sources */,
 				20970E0E2B871E1100690459 /* ProjectModel.swift in Sources */,

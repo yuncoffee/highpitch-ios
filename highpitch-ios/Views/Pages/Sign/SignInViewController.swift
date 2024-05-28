@@ -11,7 +11,6 @@ import RxSwift
 import RxCocoa
 
 final class SignInViewController: UIViewController {
-    
     // swiftlint: disable force_cast
     private var mainView: SignInView {
         view as! SignInView
@@ -63,6 +62,7 @@ final class SignInViewController: UIViewController {
     }
 }
 
+#if DEBUG
 struct SignInViewController_Previews: PreviewProvider {
     static var previews: some View {
         ViewControllerPreview {
@@ -70,3 +70,4 @@ struct SignInViewController_Previews: PreviewProvider {
         }
     }
 }
+#endif
