@@ -25,6 +25,14 @@
 		203EB05D2B8CA0A500FCEF52 /* PracticeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203EB05C2B8CA0A500FCEF52 /* PracticeDetailViewController.swift */; };
 		2043C33E2B8F057B00B3476C /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 2043C33D2B8F057B00B3476C /* Differentiator */; };
 		2043C3402B8F057B00B3476C /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 2043C33F2B8F057B00B3476C /* RxDataSources */; };
+		204A39C92C06C21500C2F403 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 204A39C82C06C21500C2F403 /* Alamofire */; };
+		204A39CC2C06C31E00C2F403 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204A39CB2C06C31E00C2F403 /* APIClient.swift */; };
+		204A39CE2C06C38A00C2F403 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204A39CD2C06C38A00C2F403 /* APIEndpoints.swift */; };
+		204A39D02C06C3AA00C2F403 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204A39CF2C06C3AA00C2F403 /* APIRouter.swift */; };
+		204A39D32C06C57700C2F403 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204A39D22C06C57700C2F403 /* UserDTO.swift */; };
+		204A39D52C06C5E700C2F403 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204A39D42C06C5E700C2F403 /* UserService.swift */; };
+		204A39D72C06C69D00C2F403 /* AuthDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204A39D62C06C69D00C2F403 /* AuthDTO.swift */; };
+		204A39D92C06C88F00C2F403 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204A39D82C06C88F00C2F403 /* AuthService.swift */; };
 		204C9C642BF4A8D3003E5D22 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C9C632BF4A8D3003E5D22 /* MyPageView.swift */; };
 		204C9C662BF4A9F9003E5D22 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C9C652BF4A9F9003E5D22 /* MyPageViewModel.swift */; };
 		204C9C692BF4AD81003E5D22 /* MyPageInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C9C682BF4AD81003E5D22 /* MyPageInfoCell.swift */; };
@@ -124,6 +132,14 @@
 		20119F742B946CFC0014568A /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		20119F752B946CFC0014568A /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
 		203EB05C2B8CA0A500FCEF52 /* PracticeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeDetailViewController.swift; sourceTree = "<group>"; };
+		204A39C62C06C1B700C2F403 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		204A39CB2C06C31E00C2F403 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		204A39CD2C06C38A00C2F403 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		204A39CF2C06C3AA00C2F403 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		204A39D22C06C57700C2F403 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		204A39D42C06C5E700C2F403 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		204A39D62C06C69D00C2F403 /* AuthDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDTO.swift; sourceTree = "<group>"; };
+		204A39D82C06C88F00C2F403 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		204C9C632BF4A8D3003E5D22 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		204C9C652BF4A9F9003E5D22 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		204C9C682BF4AD81003E5D22 /* MyPageInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageInfoCell.swift; sourceTree = "<group>"; };
@@ -192,6 +208,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				204A39C92C06C21500C2F403 /* Alamofire in Frameworks */,
 				20F545572B8D6DFE004B8462 /* RxCocoa in Frameworks */,
 				20970E1D2B87282300690459 /* PinLayout in Frameworks */,
 				20F5455B2B8D6DFE004B8462 /* RxSwift in Frameworks */,
@@ -292,6 +309,25 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		204A39CA2C06C2D000C2F403 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				204A39CB2C06C31E00C2F403 /* APIClient.swift */,
+				204A39CF2C06C3AA00C2F403 /* APIRouter.swift */,
+				204A39CD2C06C38A00C2F403 /* APIEndpoints.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		204A39D12C06C54900C2F403 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				204A39D22C06C57700C2F403 /* UserDTO.swift */,
+				204A39D62C06C69D00C2F403 /* AuthDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
 		204C9C672BF4AD50003E5D22 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +395,7 @@
 				20E352A62B933E7900180508 /* Protocols */,
 				20970E092B85E27300690459 /* Extension */,
 				20970E0C2B871DE800690459 /* Models */,
+				204A39CA2C06C2D000C2F403 /* Network */,
 				20E352A32B9334B000180508 /* Service */,
 				20970DEC2B85CB9600690459 /* Views */,
 			);
@@ -386,6 +423,7 @@
 			isa = PBXGroup;
 			children = (
 				20970D682B84D62800690459 /* Info.plist */,
+				204A39C62C06C1B700C2F403 /* Secrets.xcconfig */,
 				20970D5A2B84D62700690459 /* AppDelegate.swift */,
 				20970D5C2B84D62700690459 /* SceneDelegate.swift */,
 				20970DEB2B85CB2800690459 /* Asset */,
@@ -491,6 +529,7 @@
 				20970E0D2B871E1100690459 /* ProjectModel.swift */,
 				20970E0F2B871E2100690459 /* PracticeModel.swift */,
 				20970E112B871E3400690459 /* UserModel.swift */,
+				204A39D12C06C54900C2F403 /* DTO */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -554,6 +593,8 @@
 			children = (
 				20E352A42B9334F000180508 /* ProjectService.swift */,
 				20B509292BA0254E00076FFA /* RecordingService.swift */,
+				204A39D42C06C5E700C2F403 /* UserService.swift */,
+				204A39D82C06C88F00C2F403 /* AuthService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -601,6 +642,7 @@
 				2043C33D2B8F057B00B3476C /* Differentiator */,
 				2043C33F2B8F057B00B3476C /* RxDataSources */,
 				20E24DB82B9AA1FB004A0A88 /* Reusable */,
+				204A39C82C06C21500C2F403 /* Alamofire */,
 			);
 			productName = "highpitch-ios";
 			productReference = 20970D572B84D62700690459 /* highpitch-ios.app */;
@@ -680,6 +722,7 @@
 				20F545552B8D6DFE004B8462 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				2043C33C2B8F057B00B3476C /* XCRemoteSwiftPackageReference "RxDataSources" */,
 				20E24DB72B9AA1FB004A0A88 /* XCRemoteSwiftPackageReference "Reusable" */,
+				204A39C72C06C21500C2F403 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 20970D582B84D62700690459 /* Products */;
 			projectDirPath = "";
@@ -770,6 +813,7 @@
 				20119F6B2B946C250014568A /* UIFont+Extension.swift in Sources */,
 				20B5092A2BA0254E00076FFA /* RecordingService.swift in Sources */,
 				204C9C6B2BF4AD8D003E5D22 /* MyPageInfoHeaderCell.swift in Sources */,
+				204A39CE2C06C38A00C2F403 /* APIEndpoints.swift in Sources */,
 				20F545662B8DB3AC004B8462 /* Type+Extension.swift in Sources */,
 				20B734552C05CE9100A59891 /* SplashVC.swift in Sources */,
 				20E24DBB2B9B042A004A0A88 /* RecordingViewModel.swift in Sources */,
@@ -786,18 +830,23 @@
 				20970E022B85D21900690459 /* MyProjectViewController.swift in Sources */,
 				20B734522C05CC2200A59891 /* SignVM.swift in Sources */,
 				20970E122B871E3400690459 /* UserModel.swift in Sources */,
+				204A39D92C06C88F00C2F403 /* AuthService.swift in Sources */,
 				204DF4C72B8C8F260067170C /* PracticeDetailView.swift in Sources */,
+				204A39D72C06C69D00C2F403 /* AuthDTO.swift in Sources */,
 				20970DFE2B85D1F400690459 /* RecordingViewController.swift in Sources */,
+				204A39CC2C06C31E00C2F403 /* APIClient.swift in Sources */,
 				203EB05D2B8CA0A500FCEF52 /* PracticeDetailViewController.swift in Sources */,
 				20D72BA82BE8B8B800136876 /* HPButton.swift in Sources */,
 				20B734502C05CAC700A59891 /* SignBeforeView.swift in Sources */,
 				20970E042B85D24100690459 /* SignInViewController.swift in Sources */,
+				204A39D02C06C3AA00C2F403 /* APIRouter.swift in Sources */,
 				20B7345E2C06830B00A59891 /* SignUPPWView.swift in Sources */,
 				200730F52B970E0500157E1C /* ProjectDetailViewModel.swift in Sources */,
 				20F1E8172B984C9C0086522D /* ProjectDetailSummaryView.swift in Sources */,
 				200730F32B9559FB00157E1C /* Date+Extension.swift in Sources */,
 				20970D5D2B84D62700690459 /* SceneDelegate.swift in Sources */,
 				20119F672B9400CF0014568A /* SearchProjectViewController.swift in Sources */,
+				204A39D32C06C57700C2F403 /* UserDTO.swift in Sources */,
 				20970DF02B85CC2500690459 /* OnboardingViewController.swift in Sources */,
 				20970E002B85D20A00690459 /* MyPageViewController.swift in Sources */,
 				20E24DC12B9B4045004A0A88 /* SendRecordingResultViewController.swift in Sources */,
@@ -807,6 +856,7 @@
 				204C9C642BF4A8D3003E5D22 /* MyPageView.swift in Sources */,
 				20970E172B8724EB00690459 /* LabelFactory.swift in Sources */,
 				207AEBD12B9C0343008669C0 /* SelectProjectSheetCell.swift in Sources */,
+				204A39D52C06C5E700C2F403 /* UserService.swift in Sources */,
 				20B7344E2C05CAAC00A59891 /* SignBeforeVC.swift in Sources */,
 				20E24DBF2B9B3EF4004A0A88 /* RecordingView.swift in Sources */,
 				20119F642B94009D0014568A /* NotificationViewController.swift in Sources */,
@@ -1165,6 +1215,14 @@
 				minimumVersion = 5.0.2;
 			};
 		};
+		204A39C72C06C21500C2F403 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 		20970E182B8727FD00690459 /* XCRemoteSwiftPackageReference "FlexLayout" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/layoutBox/FlexLayout.git";
@@ -1209,6 +1267,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2043C33C2B8F057B00B3476C /* XCRemoteSwiftPackageReference "RxDataSources" */;
 			productName = RxDataSources;
+		};
+		204A39C82C06C21500C2F403 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 204A39C72C06C21500C2F403 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 		20970E192B8727FD00690459 /* FlexLayout */ = {
 			isa = XCSwiftPackageProductDependency;
