@@ -29,17 +29,19 @@ final class SignVM: ViewModelType {
     }
     
     func transform(input: Input) -> Output {
-        input.signInButtonTap?
-            .withUnretained(self)
-            .subscribe { vm, _ in
-                print("THIII YONG?")
-            }
-            .disposed(by: disposeBag)
+//        input.signInButtonTap?
+//            .withUnretained(self)
+//            .subscribe { vm, _ in
+//                print("THIII YONG?")
+//            }
+//            .disposed(by: disposeBag)
         
         input.signUpButtonTap?
             .withLatestFrom(Observable.combineLatest(email, username, password))
             .withUnretained(self)
-            .flatMapLatest { $0.authService.signUp(request: SignUpRequest(name: $1.0, username: $1.1, password: $1.2)) }
+            .flatMapLatest {
+                $0.authService.signUp(request: SignUpRequest(name: $1.0, username: $1.1, password: $1.2))
+            }
             .subscribe(onNext: { result in
                 switch result {
                 case .success(let response):
