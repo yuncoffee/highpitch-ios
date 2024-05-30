@@ -47,6 +47,13 @@ final class SignBeforeVC: UIViewController {
     }
     
     private func bind() {
+        let input = SignVM.Input(
+            signInButtonTap: mainView.linkToSignInButton.rx.tap,
+            signUpButtonTap: nil
+        )
+        
+        let output = vm.transform(input: input)
+        
         mainView.linkToSignInButton.rx.tap
             .withUnretained(self)
             .subscribe { vc, _ in

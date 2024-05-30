@@ -7,6 +7,17 @@
 
 import Foundation
 
-struct UserDTO: Codable {
-    
+struct UserResponse: Codable {
+    let id: Int
+    let name: String
+    let img: String?
+    let roleType: String
+    let loginType: String
+}
+
+struct APIFailureResponse: Codable, Error {
+    let timestamp: String
+    let status: Int
+    let error: String
+    let path: String
 }

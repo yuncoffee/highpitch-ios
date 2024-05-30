@@ -8,8 +8,8 @@
 import Foundation
 
 struct APIEndpoints {
-    static let baseURL = "https://jsonplaceholder.typicode.com"
-    static let users = "/users"
-    static let signIn = "/signin"
+    static let baseURL = "http://44.217.30.110:8080/api"
+    static let user = "/user"
+    static let signIn = "/login"
     static let signUp = "/signup"
 }

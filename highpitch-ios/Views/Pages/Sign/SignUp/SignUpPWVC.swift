@@ -42,10 +42,11 @@ final class SignUpPWVC: UIViewController {
     }
     
     private func setup() {
-        
+        print("Showing")
     }
     
     private func bind() {
-        
+        let input = SignVM.Input(signInButtonTap: nil, signUpButtonTap: mainView.signUpButton.rx.tap)
+        let _ = vm.transform(input: input)
     }
 }

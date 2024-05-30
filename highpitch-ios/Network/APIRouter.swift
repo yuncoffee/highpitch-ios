@@ -10,13 +10,13 @@ import Foundation
 import Alamofire
 
 enum APIRouter: URLRequestConvertible {
-    case getUsers
+    case getUser
     case signIn(SignInRequset)
     case signUp(SignUpRequest)
     
     var method: HTTPMethod {
         switch self {
-        case .getUsers:
+        case .getUser:
             return .get
         case .signIn, .signUp:
             return .post
@@ -25,8 +25,8 @@ enum APIRouter: URLRequestConvertible {
     
     var path: String {
         switch self {
-        case .getUsers:
-            return APIEndpoints.users
+        case .getUser:
+            return APIEndpoints.user
         case .signIn:
             return APIEndpoints.signIn
         case .signUp:
@@ -36,7 +36,7 @@ enum APIRouter: URLRequestConvertible {
     
     var parameters: [String: Any]? {
         switch self {
-        case .getUsers:
+        case .getUser:
             return nil
         case .signIn(let request):
             return try? request.asDictionary()

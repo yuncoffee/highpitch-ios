@@ -14,9 +14,9 @@ final class APIClient {
     private init() {}
     
     // getUser
-    func getUsers(completion: @escaping (Result<[UserDTO], AFError>) -> Void) {
-        AF.request(APIRouter.getUsers)
-            .responseDecodable(of: [UserDTO].self) { response in
+    func getUser(completion: @escaping (Result<UserResponse, AFError>) -> Void) {
+        AF.request(APIRouter.getUser)
+            .responseDecodable(of: UserResponse.self) { response in
                 completion(response.result)
             }
     }
@@ -31,10 +31,27 @@ final class APIClient {
     }
     
     // 회원가입 요청
-    func signUp(request: SignUpRequest, completion: @escaping (Result<SignUpResponse, AFError>) -> Void) {
+    func signUp(request: SignUpRequest, completion: @escaping (Result<UserResponse, APIFailureResponse>) -> Void) {
         AF.request(APIRouter.signUp(request))
-            .responseDecodable(of: SignUpResponse.self) { response in
-                completion(response.result)
+            .responseDecodable(of: UserResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    completion(.success(response))
+                case .failure(let error):
+                    if let data = response.data {
+                        do {
+                            let error = try JSONDecoder().decode(APIFailureResponse.self, from: data)
+                            completion(.failure(error))
+                        } catch {
+                            let genericError = APIFailureResponse(timestamp: Date().description, status: 400, error: "Catch Error", path: "App")
+                            completion(.failure(genericError))
+                        }
+                    } else {
+                        let unknownError = APIFailureResponse(timestamp: Date().description, status: 400, error: "Unknown Error", path: "App")
+                        completion(.failure(unknownError))
+                    }
+                }
+                
             }
     }
 }
